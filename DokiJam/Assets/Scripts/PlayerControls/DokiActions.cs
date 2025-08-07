@@ -1,0 +1,65 @@
+using UnityEngine;
+
+public class DokiActions : MonoBehaviour
+{
+    [Header("Variables")]
+    [SerializeField] float speed = 5f;
+    [SerializeField] int numDragoons = 5;
+    [SerializeField] int dragoonNorm = 5;
+    [SerializeField] int dragoonLong = 10;
+    [SerializeField] int dragoonBeeg = 15;
+
+    // Objects
+    InputSystem_Actions inputActions;
+    int currDragoons = 0;
+
+    void Awake()
+    {
+        Debug.Log("DokiActions Awake");
+        // Grab all input actions from Unity's New Input System
+        inputActions = new InputSystem_Actions();
+        // movement
+        inputActions.Player.Enable();
+        inputActions.Player.Move.Enable();
+        inputActions.Player.Move.canceled += _ => Stop();
+
+        // attack
+        inputActions.Player.Attack.Enable();
+
+        // interact
+        inputActions.Player.Interact.Enable();
+
+        Debug.Log("DokiActions initialized");
+    }
+
+    void Stop()
+    {
+        
+    }
+
+    void normalDragoon()
+    {
+        // So this is just a normal dragoon
+        // CHUCK EM AT ENEMY
+        // Left click -> Chuck
+        // Long and Beeg can chain react into this, basically chucks it to enemy
+        // Damage based on speed? 
+        // Call to normalDragoon instantiates a normalDragoon with some velocity in direction of mouse
+    }
+
+    void longDragoon()
+    {
+        
+    }
+
+    void beegDragoon()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
