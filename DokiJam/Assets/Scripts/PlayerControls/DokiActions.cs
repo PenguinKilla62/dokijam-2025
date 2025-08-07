@@ -5,9 +5,11 @@ public class DokiActions : MonoBehaviour
     [Header("Variables")]
     [SerializeField] float speed = 5f;
     [SerializeField] int numDragoons = 5;
-    [SerializeField] int dragoonNorm = 5;
-    [SerializeField] int dragoonLong = 10;
-    [SerializeField] int dragoonBeeg = 15;
+    [SerializeField] int dragoonNormDmg = 5;
+    [SerializeField] int dragoonLongDmg = 5;
+    [SerializeField] int dragoonLongRange = 5;
+    [SerializeField] int dragoonBeegDmg = 5;
+    [SerializeField] int dragoonBeegRange = 5;
 
     // Objects
     InputSystem_Actions inputActions;
@@ -49,17 +51,19 @@ public class DokiActions : MonoBehaviour
 
     void longDragoon()
     {
-        
+        // Left click -> swoop cone in front of player
     }
 
     void beegDragoon()
     {
-        
+        // Left click -> bomb, explodes in x seconds
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (inputActions.Player.Move.IsPressed()) {
+            Debug.Log(inputActions.Player.Move.ReadValue<Vector2>());
+        }
     }
 }

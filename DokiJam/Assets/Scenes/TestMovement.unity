@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1297663683}
   - component: {fileID: 1297663682}
   - component: {fileID: 1297663684}
+  - component: {fileID: 1297663685}
   m_Layer: 0
   m_Name: Doki
   m_TagString: Untagged
@@ -307,6 +308,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  numDragoons: 5
+  dragoonNormDmg: 5
+  dragoonLongDmg: 5
+  dragoonLongRange: 5
+  dragoonBeegDmg: 5
+  dragoonBeegRange: 5
+--- !u!50 &1297663685
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297663681}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2085989204
 GameObject:
   m_ObjectHideFlags: 0
