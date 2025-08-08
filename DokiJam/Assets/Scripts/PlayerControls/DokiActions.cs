@@ -15,6 +15,9 @@ public class DokiActions : MonoBehaviour
     InputSystem_Actions inputActions;
     int currDragoons = 0;
 
+    [Header("References")]
+    public Rigidbody2D rb;
+
     void Awake()
     {
         Debug.Log("DokiActions Awake");
@@ -31,12 +34,15 @@ public class DokiActions : MonoBehaviour
         // interact
         inputActions.Player.Interact.Enable();
 
+        rb = GetComponent<Rigidbody2D>();
+
         Debug.Log("DokiActions initialized");
     }
 
     void Stop()
     {
-        
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log("Movement stopped");
     }
 
     void normalDragoon()
@@ -62,8 +68,10 @@ public class DokiActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputActions.Player.Move.IsPressed()) {
+        if (inputActions.Player.Move.IsPressed())
+        {
             Debug.Log(inputActions.Player.Move.ReadValue<Vector2>());
+            rb.linearVelocity = inputActions.Player.Move.ReadValue<Vector2>() * speed;
         }
     }
 }
