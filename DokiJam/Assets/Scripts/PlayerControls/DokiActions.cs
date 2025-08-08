@@ -37,6 +37,9 @@ public class DokiActions : MonoBehaviour
         // attack
         inputActions.Player.Attack.Enable();
 
+        // look
+        inputActions.Player.MousePos.Enable();
+
         // interact
         inputActions.Player.Interact.Enable();
 
@@ -101,11 +104,24 @@ public class DokiActions : MonoBehaviour
         // Damage based on speed? 
         // Call to normalDragoon instantiates a normalDragoon with some velocity in direction of mouse
         Debug.Log("Normal dragoon attack executed");
+        if (currDragoons >= numDragoons)
+        {
+            Debug.Log("Max number of dragoons reached");
+            return; // Don't spawn more dragoons than allowed
+        }
+        var tossedDragoon = Instantiate(normalDragoonPrefab, transform.position, Quaternion.identity);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>());
+        Vector2 direction = (mousePosition - rb.position).normalized;
+        tossedDragoon.GetComponent<Rigidbody2D>().linearVelocity = (direction * speed) + rb.linearVelocity;
+        currDragoons++;
     }
 
     void longDragoon()
     {
         // Left click -> swoop cone in front of player
+        Debug.Log("Long dragoon attack executed");
+        var tossedDragoon = Instantiate(longDragoonPrefab, transform.position, Quaternion.identity);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void beegDragoon()
