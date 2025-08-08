@@ -174,9 +174,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Wheel"",
+                    ""name"": ""WeaponSwapMouse"",
                     ""type"": ""Value"",
-                    ""id"": ""c417f935-1864-4dab-804d-5a53acbd9829"",
+                    ""id"": ""c385a2ab-f471-4fc6-aaea-334af4f50f56"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -555,6 +555,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b9569e6-9ad4-437c-b5c2-86c017319631"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""WeaponSwapMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1151,7 +1162,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_Wheel = m_Player.FindAction("Wheel", throwIfNotFound: true);
+        m_Player_WeaponSwapMouse = m_Player.FindAction("WeaponSwapMouse", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1254,7 +1265,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_Wheel;
+    private readonly InputAction m_Player_WeaponSwapMouse;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1303,9 +1314,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Wheel".
+        /// Provides access to the underlying input action "Player/WeaponSwapMouse".
         /// </summary>
-        public InputAction @Wheel => m_Wrapper.m_Player_Wheel;
+        public InputAction @WeaponSwapMouse => m_Wrapper.m_Player_WeaponSwapMouse;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1359,9 +1370,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @Wheel.started += instance.OnWheel;
-            @Wheel.performed += instance.OnWheel;
-            @Wheel.canceled += instance.OnWheel;
+            @WeaponSwapMouse.started += instance.OnWeaponSwapMouse;
+            @WeaponSwapMouse.performed += instance.OnWeaponSwapMouse;
+            @WeaponSwapMouse.canceled += instance.OnWeaponSwapMouse;
         }
 
         /// <summary>
@@ -1400,9 +1411,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @Wheel.started -= instance.OnWheel;
-            @Wheel.performed -= instance.OnWheel;
-            @Wheel.canceled -= instance.OnWheel;
+            @WeaponSwapMouse.started -= instance.OnWeaponSwapMouse;
+            @WeaponSwapMouse.performed -= instance.OnWeaponSwapMouse;
+            @WeaponSwapMouse.canceled -= instance.OnWeaponSwapMouse;
         }
 
         /// <summary>
@@ -1767,12 +1778,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Wheel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "WeaponSwapMouse" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnWheel(InputAction.CallbackContext context);
+        void OnWeaponSwapMouse(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -88,9 +88,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Wheel",
+                    "name": "WeaponSwapMouse",
                     "type": "Value",
-                    "id": "c417f935-1864-4dab-804d-5a53acbd9829",
+                    "id": "c385a2ab-f471-4fc6-aaea-334af4f50f56",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -469,6 +469,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b9569e6-9ad4-437c-b5c2-86c017319631",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "WeaponSwapMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

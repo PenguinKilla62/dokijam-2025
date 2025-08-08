@@ -10,13 +10,19 @@ public class DokiActions : MonoBehaviour
     [SerializeField] int dragoonLongRange = 5;
     [SerializeField] int dragoonBeegDmg = 5;
     [SerializeField] int dragoonBeegRange = 5;
+    [SerializeField] float timeBetweenAttacks = 0.5f;
 
     // Objects
     InputSystem_Actions inputActions;
     int currDragoons = 0;
+    int currWeapon = 0; // 0 = normal, 1 = long, 2 = beeg
+    float elapsedTime = 0f;
 
     [Header("References")]
     public Rigidbody2D rb;
+    public GameObject normalDragoonPrefab;
+    public GameObject longDragoonPrefab;
+    public GameObject beegDragoonPrefab;
 
     void Awake()
     {
@@ -34,6 +40,9 @@ public class DokiActions : MonoBehaviour
         // interact
         inputActions.Player.Interact.Enable();
 
+        // weapon swap
+        inputActions.Player.WeaponSwapMouse.Enable();
+
         rb = GetComponent<Rigidbody2D>();
 
         Debug.Log("DokiActions initialized");
@@ -45,6 +54,44 @@ public class DokiActions : MonoBehaviour
         Debug.Log("Movement stopped");
     }
 
+    void MoveAndAttack()
+    {
+        if (inputActions.Player.Move.IsPressed())
+        {
+            Debug.Log(inputActions.Player.Move.ReadValue<Vector2>());
+            rb.linearVelocity = inputActions.Player.Move.ReadValue<Vector2>() * speed;
+        }
+
+        if (inputActions.Player.WeaponSwapMouse.IsPressed())
+        {
+            Debug.Log(inputActions.Player.WeaponSwapMouse.ReadValue<Vector2>());
+            currWeapon += (int)inputActions.Player.WeaponSwapMouse.ReadValue<Vector2>()[1];
+            if (currWeapon < 0) currWeapon += 3;
+            if (currWeapon > 2) currWeapon -= 3;
+            Debug.Log("Current weapon: " + currWeapon);
+        }
+
+        if (inputActions.Player.Attack.IsPressed() && elapsedTime >= timeBetweenAttacks)
+        {
+            elapsedTime = 0f; // Reset the attack timer
+            Debug.Log("Attack pressed");
+            switch (currWeapon) {
+                case 0:
+                    normalDragoon();
+                    break;
+                case 1:
+                    longDragoon();
+                    break;
+                case 2:
+                    beegDragoon();
+                    break;
+                default:
+                    Debug.LogError("Invalid weapon type selected: " + currWeapon);
+                    break;
+            }
+        }
+    }
+
     void normalDragoon()
     {
         // So this is just a normal dragoon
@@ -53,6 +100,7 @@ public class DokiActions : MonoBehaviour
         // Long and Beeg can chain react into this, basically chucks it to enemy
         // Damage based on speed? 
         // Call to normalDragoon instantiates a normalDragoon with some velocity in direction of mouse
+        Debug.Log("Normal dragoon attack executed");
     }
 
     void longDragoon()
@@ -68,10 +116,7 @@ public class DokiActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputActions.Player.Move.IsPressed())
-        {
-            Debug.Log(inputActions.Player.Move.ReadValue<Vector2>());
-            rb.linearVelocity = inputActions.Player.Move.ReadValue<Vector2>() * speed;
-        }
+        elapsedTime += Time.deltaTime;
+        MoveAndAttack();
     }
 }
