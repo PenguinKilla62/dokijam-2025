@@ -1,0 +1,31 @@
+﻿title: Start
+position: -48,-88
+---
+Player: Hello there!
+NPC: Oh, hello! How can I help you today?
+-> I need information.
+    NPC: What would you like to know?
+    <<jump Start>>
+-> I'm just browsing.
+    NPC: Feel free to look around!
+    <<jump Start>>
+-> Actually, I should go.
+    NPC: No problem. Come back anytime!
+    <<jump Node>>
+===
+
+title: Node
+position: 235,30
+---
+Player: this is an additional Node
+NPC: what are you talking about?
+<<jump End>>
+===
+
+title: End
+position: 2,186
+---
+Player: Thanks for your help!
+NPC: You're welcome! Have a nice day!
+===
+
