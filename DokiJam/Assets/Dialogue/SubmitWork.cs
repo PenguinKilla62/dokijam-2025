@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -31,6 +32,14 @@ public class SubmitWork : MonoBehaviour
     public void Start()
     {
         variableStorage = FindFirstObjectByType<InMemoryVariableStorage>();
+        var objects = FindObjectsByType<InMemoryVariableStorage>(FindObjectsSortMode.InstanceID);
+        foreach (var thing in objects)
+        {
+            if (thing.name == "Worker Dialogue System")
+            {
+                variableStorage = thing;
+            }
+        }
         DetermineNextChange();
         UpdateVariableStorage();
         dialogueRunner.StartDialogue("WorkerStarting");
