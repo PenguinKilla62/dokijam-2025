@@ -1,0 +1,13 @@
+title: OfficeBossStart
+position: -48,-88
+---
+Office_Boss: What are you doing?
+Doki: Working? ... Working.
+Office_Boss: Does your work involve this?
+-> It sure does.
+    Doki: It sure does.
+-> Not really.
+    Doki: Not really.
+Office_Boss: Get back to your desk and work on something productive.
+Doki: Yes, sir...
+===

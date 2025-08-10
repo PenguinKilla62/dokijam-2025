@@ -1,0 +1,94 @@
+// This are all disjointed Dialogue Nodes to be called as part of the work mini game
+// Doki will get a gray image and be asked by a co-worker to make changes
+// The co-worker will check that Doki did what they asked then review with the higher up
+// The higher up will disapprove of the changes several times
+// Eventually the changes will amount to going back to the gray image
+// The higher up will accept and the work mini game will finish
+
+// TLDR: Doki will be given a gray image, then make several changes, only to end with a gray image.
+
+
+
+title: WorkerIncrease
+position: 0,0
+---
+<<declare $increase_color = "red" as String>>
+<<declare $increase_amount = 1 as Number>>
+
+<<load_variables>>
+
+Worker: Can you change this and increase the {$increase_color} by {$increase_amount}
+===
+
+title: WorkerDecrease
+position: 5,177
+---
+<<declare $decrease_color = "red" as String>>
+<<declare $decrease_amount = 1 as Number>>
+
+<<load_variables>>
+Worker: Can you change this and decrease the {$decrease_color} by {$decrease_amount}
+===
+
+title: WorkerSet
+---
+<<declare $set_color = "red" as String>>
+<<declare $set_amount = 127 as Number>>
+<<load_variables>>
+Worker: Can you change this and set the {$set_color} to {$set_amount}
+===
+
+title: WorkerSetMultipleColors
+position: 1,-154
+---
+<<declare $red_amount = 127 as Number>>
+<<declare $green_amount = 127 as Number>>
+<<declare $blue_amount = 127 as Number>>
+<<load_variables>>
+Worker: Heres the colors to change.
+Worker: Red - {$red_amount}
+Worker: Green - {$green_amount}
+Worker: Blue - {$blue_amount}
+===
+
+title: WorkerFailedSelfReview
+position: 252,-157
+---
+Worker: Hey, this isn't what I asked for.
+Worker: I'm not sending this to my higher up yet.
+Worker: Let me repeat myself.
+===
+
+title: WorkerStarting
+position: 264,15
+---
+Worker: Hey I'm going to send you an image I want you to edit.
+Worker: Send it back for review.
+===
+
+title: WorkerDisgruntled
+position: 266,169
+---
+Worker: Thought the higher up would like this.
+Worker: Lets keep working through this.
+===
+
+title: WorkerHigherUpReviewing
+position: -248,180
+---
+Worker: Thanks for the changes, I'll review this with my higher up.
+===
+
+title: WorkerFinished
+position: -256,2
+---
+Worker: Perfect. This looks like what we're going with. Thanks 
+===
+
+title: DokiWorkProgress
+position: -305,-209
+position: -264,-208
+position: 250,-325
+---
+Doki: Heres the current changes, let me know what you think.
+===
