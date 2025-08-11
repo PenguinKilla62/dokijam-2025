@@ -4,6 +4,7 @@ public class DokiActions : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] float speed = 5f;
+    [SerializeField] float sprintSpeed = 10f;
     [SerializeField] int numDragoons = 5;
     [SerializeField] int dragoonNormDmg = 5;
     [SerializeField] int dragoonLongDmg = 5;
@@ -14,6 +15,7 @@ public class DokiActions : MonoBehaviour
 
     // Objects
     InputSystem_Actions inputActions;
+    Animator animator;
     int currDragoons = 0;
     int currWeapon = 0; // 0 = normal, 1 = long, 2 = beeg
     float elapsedTime = 0f;
@@ -46,7 +48,11 @@ public class DokiActions : MonoBehaviour
         // weapon swap
         inputActions.Player.WeaponSwapMouse.Enable();
 
+        // sprint
+        inputActions.Player.Sprint.Enable();
+
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         Debug.Log("DokiActions initialized");
     }
@@ -55,6 +61,7 @@ public class DokiActions : MonoBehaviour
     {
         rb.linearVelocity = Vector2.zero;
         Debug.Log("Movement stopped");
+        animator.SetFloat("xVelocity", 0f);
     }
 
     void MoveAndAttack()
@@ -62,7 +69,40 @@ public class DokiActions : MonoBehaviour
         if (inputActions.Player.Move.IsPressed())
         {
             Debug.Log(inputActions.Player.Move.ReadValue<Vector2>());
+            if (inputActions.Player.Move.ReadValue<Vector2>() == Vector2.up)
+            {
+                // up
+                animator.SetFloat("vVelocity", 1f);
+                animator.SetFloat("hVelocity", 0f);
+                animator.SetBool("isBackward", true);
+            }
+            else if (inputActions.Player.Move.ReadValue<Vector2>() == Vector2.down)
+            {
+                // down
+                animator.SetFloat("vVelocity", -1f);
+                animator.SetFloat("hVelocity", 0f);
+                animator.SetBool("isBackward", false);
+            }
+            else if (inputActions.Player.Move.ReadValue<Vector2>() == Vector2.left)
+            {
+                // left
+                animator.SetFloat("hVelocity", -1f);
+                animator.SetFloat("vVelocity", 0f);
+            }
+            else if (inputActions.Player.Move.ReadValue<Vector2>() == Vector2.right)
+            {
+                // right
+                animator.SetFloat("hVelocity", 1f);
+                animator.SetFloat("vVelocity", 0f);
+            }
             rb.linearVelocity = inputActions.Player.Move.ReadValue<Vector2>() * speed;
+            animator.SetFloat("xVelocity", 0.4f);
+            // handle sprinting
+            if (inputActions.Player.Sprint.IsPressed())
+            {
+                rb.linearVelocity *= sprintSpeed / speed;
+                animator.SetFloat("xVelocity", 1f);
+            }
         }
 
         if (inputActions.Player.WeaponSwapMouse.IsPressed())
