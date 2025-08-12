@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  sprintSpeed: 10
   numDragoons: 5
   dragoonNormDmg: 5
   dragoonLongDmg: 5
@@ -113,7 +114,7 @@ MonoBehaviour:
   dragoonBeegRange: 5
   timeBetweenAttacks: 0.5
   rb: {fileID: 0}
-  normalDragoonData: {fileID: 11400000, guid: fb43fe7457f23b74b9b2fe239a15bad4, type: 2}
+  normalDragoonPrefab: {fileID: 398240543257608760, guid: e68b8b451194f9b428583d8826774446, type: 3}
   longDragoonPrefab: {fileID: 0}
   beegDragoonPrefab: {fileID: 0}
 --- !u!50 &1789149377206213624
@@ -189,7 +190,7 @@ Animator:
   m_GameObject: {fileID: 6139746373528156026}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 456fafcf36e50074d924b8ad91ebfecc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
