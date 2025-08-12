@@ -13,12 +13,16 @@ public class DokiActions : MonoBehaviour
     [SerializeField] int dragoonBeegRange = 5;
     [SerializeField] float timeBetweenAttacks = 0.5f;
 
-    // Objects
+    // Objects and Other Variables
     InputSystem_Actions inputActions;
     Animator animator;
     int currDragoons = 0;
     int currWeapon = 0; // 0 = normal, 1 = long, 2 = beeg
     float elapsedTime = 0f;
+    bool isSweeping = false;
+    int currAttackLong = 0;
+    int[] longDragoonAttacks = { 45, 180, 360 }; // Attack types for long dragoon
+    private PolygonCollider2D poly;
 
     [Header("References")]
     public Rigidbody2D rb;
@@ -28,6 +32,8 @@ public class DokiActions : MonoBehaviour
 
     void Awake()
     {
+        poly = GetComponent<PolygonCollider2D>();
+        poly.isTrigger = true;
         Debug.Log("DokiActions Awake");
         // Grab all input actions from Unity's New Input System
         inputActions = new InputSystem_Actions();
@@ -118,7 +124,8 @@ public class DokiActions : MonoBehaviour
         {
             elapsedTime = 0f; // Reset the attack timer
             Debug.Log("Attack pressed");
-            switch (currWeapon) {
+            switch (currWeapon)
+            {
                 case 0:
                     normalDragoon();
                     break;
@@ -160,8 +167,10 @@ public class DokiActions : MonoBehaviour
     {
         // Left click -> swoop cone in front of player
         Debug.Log("Long dragoon attack executed");
-        var tossedDragoon = Instantiate(longDragoonPrefab, transform.position, Quaternion.identity);
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // var hittingDragoon = Instantiate(longDragoonPrefab, transform.position + Vector3.right, Quaternion.Euler(0, 0, 45));
+        // Vector2 mousePosition = Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>());
+        // hittingDragoon.GetComponent<Transform>().RotateAround(this.transform.position, mousePosition, 45f);
+        isSweeping = true; // Set sweeping to true to allow for sweeping attacks
     }
 
     void beegDragoon()
@@ -169,10 +178,48 @@ public class DokiActions : MonoBehaviour
         // Left click -> bomb, explodes in x seconds
     }
 
+    void sweepLong(int attackIndex)
+    {
+        if (!isSweeping) return;
+        Debug.Log("Sweeping with long dragoon, attack index: " + attackIndex);
+        // First attack sweeps in a 45 degree arc in direction of mouse
+        // Second attack sweeps in a 90 degree arc in direction of mouse, moves doki slightly in direction of mouse
+        // Third attack sweeps in a 360 degree arc 
+        float t = Mathf.Clamp01(elapsedTime / timeBetweenAttacks);
+        Debug.Log("Sweep time: " + t);
+        if (t >= 1f)
+        {
+            isSweeping = false; // Reset sweeping after the attack is done
+            currAttackLong = (currAttackLong + 1) % 3; // Cycle through attacks
+            return;
+        }
+        float angleWanted = Mathf.Lerp(0, longDragoonAttacks[currAttackLong], t);
+
+        Debug.Log("Sweeping long dragoon with angle: " + angleWanted);
+        // set points of the polygon collider to the angle
+        int pointCnt = Mathf.CeilToInt(angleWanted);
+        Debug.Log("Number of points in polygon: " + pointCnt);
+        Vector2[] points = new Vector2[pointCnt];
+        points[0] = (Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>()) - this.transform.position).normalized * dragoonLongRange; // center
+        float halfArc = angleWanted / 2f;
+        for (int i = 1; i < pointCnt; i++)
+        {
+            float angle = -halfArc + angleWanted / pointCnt * i;
+            float rad = angle * Mathf.Deg2Rad;
+            points[i + 1] = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * dragoonLongRange;
+        }
+        poly.points = points;
+
+
+        // var sweepingDragoon = Instantiate(longDragoonPrefab, transform.position, Quaternion.identity);
+        // sweepingDragoon.GetComponent<longDragoonHit>().attacks = new int[] { attackIndex };
+    }
+
     // Update is called once per frame
     void Update()
     {
         elapsedTime += Time.deltaTime;
         MoveAndAttack();
+        sweepLong(currAttackLong);
     }
 }
