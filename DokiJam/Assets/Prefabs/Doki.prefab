@@ -117,7 +117,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   normalDragoonPrefab: {fileID: 398240543257608760, guid: e68b8b451194f9b428583d8826774446, type: 3}
   longDragoonPrefab: {fileID: 5924064836564468747, guid: 16ffdb78d89ff0f449807ee941291b47, type: 3}
-  beegDragoonPrefab: {fileID: 0}
+  beegDragoonPrefab: {fileID: 841208511112245469, guid: b3177e6a3755dcd4d805b6e6103f972a, type: 3}
 --- !u!50 &1789149377206213624
 Rigidbody2D:
   serializedVersion: 5
