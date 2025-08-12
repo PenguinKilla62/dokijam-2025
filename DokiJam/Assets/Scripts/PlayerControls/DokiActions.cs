@@ -197,18 +197,22 @@ public class DokiActions : MonoBehaviour
 
         Debug.Log("Sweeping long dragoon with angle: " + angleWanted);
         // set points of the polygon collider to the angle
-        int pointCnt = Mathf.CeilToInt(angleWanted);
+        int pointCnt = Mathf.CeilToInt(angleWanted/2f) + 1;
         Debug.Log("Number of points in polygon: " + pointCnt);
         Vector2[] points = new Vector2[pointCnt];
-        points[0] = (Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>()) - this.transform.position).normalized * dragoonLongRange; // center
+        points[0] = (Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>()) - transform.position).normalized * dragoonLongRange; // center
         float halfArc = angleWanted / 2f;
-        for (int i = 1; i < pointCnt; i++)
+        Vector2 dirToMouse = (Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>()) - transform.position).normalized;
+        float mouseAngle = Mathf.Atan2(dirToMouse.y, dirToMouse.x) * Mathf.Rad2Deg;
+        for (int i = 0; i < pointCnt-1; i++)
         {
-            float angle = -halfArc + angleWanted / pointCnt * i;
+            float angle = mouseAngle - halfArc + angleWanted / (pointCnt - 1) * i;
             float rad = angle * Mathf.Deg2Rad;
             points[i + 1] = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * dragoonLongRange;
+            Debug.Log("Point " + i + ": " + points[i + 1]);
         }
         poly.points = points;
+        Debug.Log(poly.points.Length + " points set for long dragoon sweep");
 
 
         // var sweepingDragoon = Instantiate(longDragoonPrefab, transform.position, Quaternion.identity);
