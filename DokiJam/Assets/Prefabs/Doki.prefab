@@ -110,7 +110,7 @@ MonoBehaviour:
   numDragoons: 5
   dragoonNormDmg: 5
   dragoonLongDmg: 5
-  dragoonLongRange: 5
+  dragoonLongRange: 10
   dragoonBeegDmg: 5
   dragoonBeegRange: 5
   timeBetweenAttacks: 0.5

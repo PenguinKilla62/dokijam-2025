@@ -191,6 +191,7 @@ public class DokiActions : MonoBehaviour
         {
             isSweeping = false; // Reset sweeping after the attack is done
             currAttackLong = (currAttackLong + 1) % 3; // Cycle through attacks
+            poly.points = new Vector2[] { Vector2.zero }; // Clear the polygon collider points
             return;
         }
         float angleWanted = Mathf.Lerp(0, longDragoonAttacks[currAttackLong], t);
