@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DokiActions : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class DokiActions : MonoBehaviour
     int currAttackLong = 0;
     int[] longDragoonAttacks = { 45, 180, 360 }; // Attack types for long dragoon
     private PolygonCollider2D poly;
+    bool hasBeeg = false;
 
     [Header("References")]
     public Rigidbody2D rb;
@@ -34,6 +36,7 @@ public class DokiActions : MonoBehaviour
     {
         poly = GetComponent<PolygonCollider2D>();
         poly.isTrigger = true;
+        poly.enabled = false; // Clear the polygon collider points
         Debug.Log("DokiActions Awake");
         // Grab all input actions from Unity's New Input System
         inputActions = new InputSystem_Actions();
@@ -160,6 +163,7 @@ public class DokiActions : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>());
         Vector2 direction = (mousePosition - rb.position).normalized;
         tossedDragoon.GetComponent<Rigidbody2D>().linearVelocity = (direction * speed) + rb.linearVelocity;
+        tossedDragoon.GetComponent<Rigidbody2D>().linearDamping = 0.25f;
         currDragoons++;
     }
 
@@ -176,30 +180,67 @@ public class DokiActions : MonoBehaviour
     void beegDragoon()
     {
         // Left click -> bomb, explodes in x seconds
+        Debug.Log("Beeg dragoon attack executed");
+        if (!hasBeeg)
+        {
+            var mousePosition = Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>());
+            var direction = (mousePosition - transform.position).normalized;
+            var beegDragoon = Instantiate(beegDragoonPrefab, transform.position + direction * 2, Quaternion.identity);
+            StartCoroutine(beegDragoonExplosion(beegDragoon));
+        }
+    }
+
+    IEnumerator beegDragoonExplosion(GameObject beegDragoon)
+    {
+        hasBeeg = true;
+        // Wait for a few seconds before exploding
+        yield return new WaitForSeconds(3f);
+        var polyBeeg = beegDragoon.GetComponent<PolygonCollider2D>();
+        polyBeeg.isTrigger = true;
+        // Create polygon, 360 degrees around the beeg dragoon
+        int pointCount = 180; // Number of points in the polygon
+        Vector2[] points = new Vector2[pointCount];
+        points[0] = beegDragoon.transform.position; // Center point
+        for (int i = 0; i < pointCount - 1; i++)
+        {
+            float angle = -180 + 360 / (pointCount - 1) * i;
+            float rad = angle * Mathf.Deg2Rad;
+            points[i + 1] = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * dragoonBeegRange;
+            // Debug.Log("Point " + i + ": " + points[i + 1]);
+        }
+        polyBeeg.points = points;
+        yield return new WaitForSeconds(1.0f); // Small delay
+        Debug.Log("Beeg dragoon explosion!");
+        // Instantiate explosion effect here
+        // Deal damage to enemies in range
+        Destroy(beegDragoon);
+        hasBeeg = false;
     }
 
     void sweepLong(int attackIndex)
     {
         if (!isSweeping) return;
-        Debug.Log("Sweeping with long dragoon, attack index: " + attackIndex);
+        poly.enabled = true;
+        // Debug.Log("Sweeping with long dragoon, attack index: " + attackIndex);
         // First attack sweeps in a 45 degree arc in direction of mouse
         // Second attack sweeps in a 90 degree arc in direction of mouse, moves doki slightly in direction of mouse
         // Third attack sweeps in a 360 degree arc 
         float t = Mathf.Clamp01(elapsedTime / timeBetweenAttacks);
-        Debug.Log("Sweep time: " + t);
+        // Debug.Log("Sweep time: " + t);
         if (t >= 1f)
         {
             isSweeping = false; // Reset sweeping after the attack is done
             currAttackLong = (currAttackLong + 1) % 3; // Cycle through attacks
-            poly.points = new Vector2[] { Vector2.zero }; // Clear the polygon collider points
+            poly.points = new Vector2[] {  }; // Clear the polygon collider points
+            poly.enabled = false;
             return;
         }
         float angleWanted = Mathf.Lerp(0, longDragoonAttacks[currAttackLong], t);
 
-        Debug.Log("Sweeping long dragoon with angle: " + angleWanted);
+        // Debug.Log("Sweeping long dragoon with angle: " + angleWanted);
         // set points of the polygon collider to the angle
         int pointCnt = Mathf.CeilToInt(angleWanted/2f) + 1;
-        Debug.Log("Number of points in polygon: " + pointCnt);
+        // Debug.Log("Number of points in polygon: " + pointCnt);
         Vector2[] points = new Vector2[pointCnt];
         points[0] = (Camera.main.ScreenToWorldPoint(inputActions.Player.MousePos.ReadValue<Vector2>()) - transform.position).normalized * dragoonLongRange; // center
         float halfArc = angleWanted / 2f;
@@ -210,10 +251,10 @@ public class DokiActions : MonoBehaviour
             float angle = mouseAngle - halfArc + angleWanted / (pointCnt - 1) * i;
             float rad = angle * Mathf.Deg2Rad;
             points[i + 1] = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * dragoonLongRange;
-            Debug.Log("Point " + i + ": " + points[i + 1]);
+            // Debug.Log("Point " + i + ": " + points[i + 1]);
         }
         poly.points = points;
-        Debug.Log(poly.points.Length + " points set for long dragoon sweep");
+        // Debug.Log(poly.points.Length + " points set for long dragoon sweep");
 
 
         // var sweepingDragoon = Instantiate(longDragoonPrefab, transform.position, Quaternion.identity);
