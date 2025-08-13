@@ -23,7 +23,7 @@ public class SliderScript : MonoBehaviour
 
     private void changeImageColor()
     {
-        image.color = new Color32((byte)RedValue, (byte)BlueValue, (byte)GreenValue, 255);
+        image.color = new Color32((byte)RedValue, (byte)GreenValue, (byte)BlueValue, 255);
     }
 
     public void ChangeRedValue(float newValue)
