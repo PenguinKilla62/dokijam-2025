@@ -15,8 +15,21 @@ public class VoiceOverPresenterMultiple : DialoguePresenterBase
 
     public List<CharacterVoice> characterVoices;
 
+    public Canvas canvas;
+
+    public int topSortingLayerNum = 1;
+    public int bottomSortingLayerNum = 1;
+    public bool changeSortingLayer = false;
+
     public override async YarnTask RunLineAsync(LocalizedLine line, LineCancellationToken token)
     {
+
+        if (changeSortingLayer == true && canvas != null)
+        {
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = topSortingLayerNum;
+        }
+
         // Check if there is a character
 
         CharacterVoice? foundCharacterVoice = characterVoices.FirstOrDefault<CharacterVoice>(characterVoice => characterVoice.name == line.CharacterName);
@@ -66,6 +79,12 @@ public class VoiceOverPresenterMultiple : DialoguePresenterBase
 
     public override YarnTask OnDialogueCompleteAsync()
     {
+        if (changeSortingLayer == true && canvas != null)
+        {
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = bottomSortingLayerNum;
+        }
+
         if (characterVoices != null && characterVoices.Count > 0)
         {
             foreach (var characterVoice in characterVoices)
