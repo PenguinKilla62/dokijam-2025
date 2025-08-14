@@ -12569,10 +12569,6 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1789149377206213624, guid: ad57fccd74fdfae4bbc1aa1e240ae9c1, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5439588631720983480, guid: ad57fccd74fdfae4bbc1aa1e240ae9c1, type: 3}
       propertyPath: m_SortingOrder
       value: 20
