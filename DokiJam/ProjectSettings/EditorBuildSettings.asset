@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroComputer.unity
     guid: 42229ebdb922c9047b64feb17dc9c3c3
+  - enabled: 1
+    path: Assets/Scenes/ActualGame/BeginningMonologue.unity
+    guid: 0978fbba3614dbf4995fe21e3c6b88c4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
