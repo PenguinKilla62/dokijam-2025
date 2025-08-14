@@ -24,6 +24,7 @@ public class DokiActions : MonoBehaviour
     int currAttackLong = 0;
     int[] longDragoonAttacks = { 45, 180, 360 }; // Attack types for long dragoon
     private PolygonCollider2D poly;
+    private BoxCollider2D box;
     bool hasBeeg = false;
 
     [Header("References")]
@@ -34,6 +35,7 @@ public class DokiActions : MonoBehaviour
 
     void Awake()
     {
+        box = GetComponent<BoxCollider2D>();
         poly = GetComponent<PolygonCollider2D>();
         poly.isTrigger = true;
         poly.enabled = false; // Clear the polygon collider points
@@ -130,7 +132,9 @@ public class DokiActions : MonoBehaviour
             switch (currWeapon)
             {
                 case 0:
+                    box.enabled = false;
                     normalDragoon();
+                    box.enabled = true; // Re-enable the box collider after the attack
                     break;
                 case 1:
                     longDragoon();
