@@ -82,7 +82,12 @@ public class SubmitWork : MonoBehaviour
     {
         bool result = true;
 
-        if (_redValue != sliderGameObject.RedValue || _greenValue != sliderGameObject.GreenValue || _blueValue != sliderGameObject.BlueValue)
+        // if (_redValue != sliderGameObject.RedValue || _greenValue != sliderGameObject.GreenValue || _blueValue != sliderGameObject.BlueValue)
+        // {
+        //     result = false;
+        // }
+        // gonna give this a bit more leniency cuz doing this on mouse is just carpal tunnel simulator
+        if (Math.Abs(_redValue - sliderGameObject.RedValue) > 10 || Math.Abs(_greenValue - sliderGameObject.GreenValue) > 10 || Math.Abs(_blueValue - sliderGameObject.BlueValue) > 10)
         {
             result = false;
         }
@@ -99,8 +104,8 @@ public class SubmitWork : MonoBehaviour
 
     private bool StopWork()
     {
-        return _higherUpCurrentCount >= higherUpMaxCount && sliderGameObject.BlueValue == 127
-            && sliderGameObject.RedValue == 127 && sliderGameObject.GreenValue == 127;
+        return _higherUpCurrentCount >= higherUpMaxCount && Math.Abs(sliderGameObject.BlueValue - 127) > 10
+            && Math.Abs(sliderGameObject.RedValue - 127) > 10 && Math.Abs(sliderGameObject.GreenValue - 127) > 10;
     }
 
     public void CheckWork()

@@ -55,6 +55,20 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("startWork")]
+    public void StartWork()
+    {
+        Debug.Log("Starting work");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("IntroComputer");
+    }
+
+    [YarnCommand("isekai")]
+    public void Isekai()
+    {
+        Debug.Log("Isekai command called");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Isekai");
+    }
+
     public void PlayYarn(string yarnFileName)
     {
         if (waiting)
@@ -77,15 +91,5 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
-    public void onDialogueComplete()
-    {
-        StartCoroutine(WaitForDialogue());
-    }
 
-    private IEnumerator WaitForDialogue()
-    {
-        waiting = true;
-        yield return new WaitForSeconds(10f); // Wait for a short duration to ensure dialogue is complete
-        waiting = false;
-    }
 }

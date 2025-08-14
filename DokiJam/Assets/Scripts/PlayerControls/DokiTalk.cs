@@ -52,7 +52,7 @@ public class DokiTalk : MonoBehaviour
             if (tile != null)
             {
                 Debug.Log("Interacted with tile: " + tile.name);
-                yarnCommandHandler.PlayYarn("Office_"+tile.name);
+                yarnCommandHandler.PlayYarn("Office_" + tile.name);
                 // Call a method on the tile, e.g., interactableTilemap.GetComponent<Interactable>().Interact(cellPos);
             }
             else
