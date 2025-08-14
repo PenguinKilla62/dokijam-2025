@@ -8,7 +8,7 @@ public class DokiTalk : MonoBehaviour
     public YarnCommandHandler yarnCommandHandler; // Reference to YarnCommandHandler for yarn stuff
     InputSystem_Actions inputActions;
     Vector2 moveInput;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    float elapsedTime = 0f;
     void Awake()
     {
         inputActions = new InputSystem_Actions();
@@ -29,8 +29,9 @@ public class DokiTalk : MonoBehaviour
 
     void CheckInteract()
     {
-        if (inputActions.Player.Interact.IsPressed())
+        if (inputActions.Player.Interact.IsPressed() && elapsedTime > 0.5f)
         {
+            elapsedTime = 0f; // Reset elapsed time
             Debug.Log("Interact button pressed");
             // Add interaction logic here
             // Raycast2D to check for interactable objects
@@ -64,6 +65,7 @@ public class DokiTalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime;
         UpdatePOV();
         CheckInteract();
     }
