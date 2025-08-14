@@ -5,7 +5,7 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeToStartScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Office");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("BeginningMonologue");
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

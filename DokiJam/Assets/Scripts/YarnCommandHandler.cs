@@ -55,6 +55,13 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("goToWork")]
+    public void GoToWork()
+    {
+        Debug.Log("Going to work");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Office");
+    }
+
     [YarnCommand("startWork")]
     public void StartWork()
     {
