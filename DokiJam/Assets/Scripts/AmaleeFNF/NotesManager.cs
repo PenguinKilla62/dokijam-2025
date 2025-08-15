@@ -62,11 +62,10 @@ public class NotesManager : MonoBehaviour
             NotesTime.Add(time);
             LaneNum.Add(inputJson.notes[i].block);
             NoteType.Add(inputJson.notes[i].type);
-            var spacing = -50 * (inputJson.notes[i].block * 25);
             
 
             float z = NotesTime[i] * NotesSpeed;
-            GameObject newNoteObj = Instantiate(noteObj, new Vector3(inputJson.notes[i].block * 35 - 60.0f, 55f - z, 0.55f), Quaternion.identity);
+            GameObject newNoteObj = Instantiate(noteObj, new Vector3(inputJson.notes[i].block * -35 + 60.0f, 55f - z, 0.55f), Quaternion.identity);
             newNoteObj.transform.SetParent(canvas.transform, false);
             NotesObj.Add(newNoteObj);
         }
