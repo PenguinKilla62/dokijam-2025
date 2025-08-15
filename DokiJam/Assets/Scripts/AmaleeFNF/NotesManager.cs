@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Android.Gradle;
 using UnityEngine;
 
 [Serializable]
@@ -43,10 +42,10 @@ public class NotesManager : MonoBehaviour
     {
         noteNum = 0;
         //songName = "テスト";
-        Load(songName);
+        //Load(songName);
     }
 
-    private void Load(string SongName)
+    public void Load(string SongName)
     {
         Debug.Log(SongName);
         string inputString = Resources.Load<TextAsset>(SongName).ToString();
