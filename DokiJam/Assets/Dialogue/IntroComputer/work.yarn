@@ -82,7 +82,8 @@ Worker: Thanks for the changes, I'll review this with my higher up.
 title: WorkerFinished
 position: -256,2
 ---
-Worker: Perfect. This looks like what we're going with. Thanks 
+Worker: Perfect. This looks like what we're going with. Thanks.
+<<isekai YarnCommandHandler>>
 ===
 
 title: DokiWorkProgress
