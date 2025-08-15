@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using Unity.Android.Gradle;
+using UnityEngine;
+
+[Serializable]
+public class Data
+{
+    public string name;
+    public int maxBlock;
+    public int BPM;
+    public int offset;
+    public Note[] notes;
+
+}
+[Serializable]
+public class Note
+{
+    public int type;
+    public int num;
+    public int block;
+    public int LPB;
+}
+
+public class NotesManager : MonoBehaviour
+{
+    public int noteNum;
+    [SerializeField]
+    public string songName = "";
+
+    public List<int> LaneNum = new List<int>();
+    public List<int> NoteType = new List<int>();
+    public List<float> NotesTime = new List<float>();
+    public List<GameObject> NotesObj = new List<GameObject>();
+
+    [SerializeField] private float NotesSpeed;
+    [SerializeField] GameObject noteObj;
+
+    [SerializeField] 
+    Canvas canvas;
+
+    void OnEnable()
+    {
+        noteNum = 0;
+        //songName = "テスト";
+        Load(songName);
+    }
+
+    private void Load(string SongName)
+    {
+        Debug.Log(SongName);
+        string inputString = Resources.Load<TextAsset>(SongName).ToString();
+        Data inputJson = JsonUtility.FromJson<Data>(inputString);
+
+        noteNum = inputJson.notes.Length;
+
+        for (int i = 0; i < inputJson.notes.Length; i++)
+        {
+            float kankaku = 60 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
+            float beatSec = kankaku * (float)inputJson.notes[i].LPB;
+            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset + 0.01f;
+            NotesTime.Add(time);
+            LaneNum.Add(inputJson.notes[i].block);
+            NoteType.Add(inputJson.notes[i].type);
+            var spacing = -50 * (inputJson.notes[i].block * 25);
+            
+
+            float z = NotesTime[i] * NotesSpeed;
+            GameObject newNoteObj = Instantiate(noteObj, new Vector3(inputJson.notes[i].block * 35 - 60.0f, 55f - z, 0.55f), Quaternion.identity);
+            newNoteObj.transform.SetParent(canvas.transform, false);
+            NotesObj.Add(newNoteObj);
+        }
+    }
+}
