@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderGameObject: {fileID: 1670420048}
   dialogueRunner: {fileID: 1644351923}
-  higherUpMaxCount: 10
+  higherUpMaxCount: 5
 --- !u!1 &1390859108
 GameObject:
   m_ObjectHideFlags: 0
