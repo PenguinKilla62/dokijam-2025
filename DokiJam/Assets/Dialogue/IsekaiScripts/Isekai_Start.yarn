@@ -64,6 +64,12 @@ Doki: *sighs* picking up chores after a goddess... wow... so life changing.
 
 Doki: Let's get a move on so I can get outta here. 
 
+Doki: Hmm... Let's start off going to the left side.
+
+Dev Note: Hey uh we kinda forgot to program in things to make it so that if you go to the right you skip like half the game so don't do that yet teehee teehee
+
+Doki: WHO WAS THAT?!
+
 <<set $seenIntro to true>>
 <<endif>>
 ===

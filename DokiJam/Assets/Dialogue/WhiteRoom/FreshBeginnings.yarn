@@ -1,7 +1,14 @@
 ﻿title: FreshBeginnings
 ---
+<<if $seenAma is true>>
+    <<jump Ending>>
+<<endif>>
 <<lookAroundConfused YarnCommandHandler>>
 <<whichGoddessSprite YarnCommandHandler portalOpenSolemn>>
+Doki: Oh... god... my head-
+
+Doki: Huh?
+
 Doki: What the hell?!?!
 
 Doki: Where am I???

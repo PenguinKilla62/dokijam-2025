@@ -195,6 +195,25 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("sendBackToWhiteRoom")]
+    public void SendBackToWhiteRoom()
+    {
+        Debug.Log("Sending back to white room");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("WhiteSpace");
+    }
+
+    [YarnCommand("endGame")]
+    public void EndGame()
+    {
+        Debug.Log("Ending game");
+        if (variableStorage != null)
+        {
+            variableStorage.SetValue("$seenEnd", true);
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScreen");
+    }
+
     [YarnCommand("startRapping")]
     public void StartRapping()
     {
