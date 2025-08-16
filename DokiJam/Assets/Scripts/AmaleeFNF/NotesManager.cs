@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -53,11 +54,37 @@ public class NotesManager : MonoBehaviour
 
     public void PauseOrUnPauseNotes(bool value)
     {
-        foreach (var note in NotesObj)
+        
+        var doki = GameObject.Find("dokiPlatform");
+        var myNotes = doki.GetComponentsInChildren<Notes>();
+        foreach (var noteT in myNotes)
         {
-            var notesComponent = note.GetComponent<Notes>();
-            notesComponent.isPaused = value;
+            noteT.isPaused = value;
+            //Destroy(noteT.gameObject);
         }
+
+        var amalee = GameObject.Find("amaleePlatform");
+        var amaNotes = amalee.GetComponentsInChildren<Notes>();
+        foreach (var noteT in amaNotes)
+        {
+            noteT.isPaused = value;
+        }
+
+        // if (value)
+        // {
+
+
+        // }
+        // else
+        // {
+        //     foreach (var note in NotesObj)
+        //     {
+        //         var notesComponent = note.GetComponent<Notes>();
+
+        //         notesComponent.isPaused = value;
+
+        //     }
+        // }
     }
 
     public async Task Load(string SongName)
