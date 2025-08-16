@@ -26,6 +26,9 @@ public class Game : MonoBehaviour
     public TMP_Text hitComboText;
 
     [SerializeField]
+    public TMP_Text healthText;
+
+    [SerializeField]
     public AudioSource musicSource;
 
     [SerializeField]
@@ -51,15 +54,32 @@ public class Game : MonoBehaviour
     public AudioClip amaleeAudioClip;
 
 
+    public void AddHealth(int value)
+    {
+        currentHitPoints += value;
+        SetHealth();
+    }
+
+    public void SetHealth()
+    {
+        healthText.text = currentHitPoints.ToString();
+    }
 
     public void AddHitCombo()
     {
         hitCombo += 1;
+        SetHitCombo();
     }
 
     public void ClearHitCombo()
     {
         hitCombo = 0;
+        SetHitCombo();
+    }
+
+    public void SetHitCombo()
+    {
+        hitComboText.text = hitCombo.ToString();
     }
 
     public void MuteUnmuteDoki(bool value)
@@ -102,6 +122,7 @@ public class Game : MonoBehaviour
     async Task Start()
     {
         await StartMusic();
+        healthText.text = currentHitPoints.ToString();
         
     }
 

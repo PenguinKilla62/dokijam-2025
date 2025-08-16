@@ -12,6 +12,9 @@ public class EndBar : MonoBehaviour
 
     private Game game;
 
+    [SerializeField]
+    public bool triggerHit = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,17 +38,21 @@ public class EndBar : MonoBehaviour
         if (hit <= 5 && hit >= -5)
         {
             Destroy(collision.gameObject);
-            if (audioSource.isPlaying)
+
+            if (triggerHit)
             {
-                audioSource.Stop();
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+                audioSource.PlayOneShot(audioClip);
+
+                game.MuteUnmuteDoki(true);
+                await Task.Delay(100);
+                game.MuteUnmuteDoki(false);
+
+                game.ClearHitCombo();
             }
-            audioSource.PlayOneShot(audioClip);
-
-            game.MuteUnmuteDoki(true);
-            await Task.Delay(50);
-            game.MuteUnmuteDoki(false);
-
-            game.ClearHitCombo();
             
             
         }
