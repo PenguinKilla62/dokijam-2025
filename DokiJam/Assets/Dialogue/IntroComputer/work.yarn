@@ -83,7 +83,8 @@ title: WorkerFinished
 position: -256,2
 ---
 Worker: Perfect. This looks like what we're going with. Thanks.
-<<isekai YarnCommandHandler>>
+<<finishWork YarnCommandHandler>>
+<<jump workFinish>>
 ===
 
 title: DokiWorkProgress

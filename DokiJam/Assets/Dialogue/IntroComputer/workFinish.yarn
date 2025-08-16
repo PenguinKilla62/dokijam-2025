@@ -1,0 +1,55 @@
+﻿title: workFinish
+---
+Doki: Whewwww ... finally done with work!
+// Fade in the first ad
+<<popups YarnCommandHandler 0>>
+Doki: Hey, what's that?
+Doki: Looks mighty sus for an ad. 
+===
+
+title: workFinish2
+---
+// you fool second ad
+<<popups YarnCommandHandler 1>>
+Doki: WHA-? Another one?
+Doki: I installed the latest dAdblock too!
+Doki: Stupid ads and stupid popups...
+Doki: ...am I allowed to like
+Doki: Throw away the company computer?
+===
+
+title: workFinish3
+---
+// you fool third ad
+<<declare $seenAmount = 0 as Number>>
+<<popups YarnCommandHandler 2>>
+Doki: I'VE HAD IT WITH THESE ADS AND- 
+Doki: ...wait, what?
+Doki: This... seems familiar.
+===
+
+title: workHeyYoureNotSupposedToTouchThatButton
+---
+// this is if you press no on the third ad
+<<set $seenAmount = $seenAmount + 1>>
+<<popups YarnCommandHandler 2>>
+<<if $seenAmount == 2>>
+    <<jump workBlah>>
+<<endif>>
+<<if $seenAmount == 3>>
+    <<jump workBlah2>>
+<<endif>>
+Doki: It appeared again?!
+Doki: What is this; dElden Ring? Ads aren't supposed to have second phases!
+===
+
+title: workBlah
+---
+Doki: ...Hey, why won't it go away?
+===
+
+title: workBlah2
+---
+<<popupdestroy YarnCommandHandler>>
+Doki: ...I guess I HAVE to press it now.
+===

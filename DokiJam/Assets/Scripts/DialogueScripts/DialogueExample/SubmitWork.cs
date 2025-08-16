@@ -104,8 +104,8 @@ public class SubmitWork : MonoBehaviour
 
     private bool StopWork()
     {
-        return _higherUpCurrentCount >= higherUpMaxCount && Math.Abs(sliderGameObject.BlueValue - 127) > 10
-            && Math.Abs(sliderGameObject.RedValue - 127) > 10 && Math.Abs(sliderGameObject.GreenValue - 127) > 10;
+        return _higherUpCurrentCount >= higherUpMaxCount && (Math.Abs(sliderGameObject.BlueValue - 127) < 10)
+            && (Math.Abs(sliderGameObject.RedValue - 127) < 10) && (Math.Abs(sliderGameObject.GreenValue - 127) < 10);
     }
 
     public void CheckWork()
