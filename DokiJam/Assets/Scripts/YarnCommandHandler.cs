@@ -219,6 +219,7 @@ public class YarnCommandHandler : MonoBehaviour
     {
         // Go to the FNF scene
         Debug.Log("Starting rapping");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("AmaleeFNF");
     }
 
     [YarnCommand("whichGoddessSprite")]
