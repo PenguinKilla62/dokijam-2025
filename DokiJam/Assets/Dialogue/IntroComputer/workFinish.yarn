@@ -23,9 +23,9 @@ title: workFinish3
 // you fool third ad
 <<declare $seenAmount = 0 as Number>>
 <<popups YarnCommandHandler 2>>
-Doki: I'VE HAD IT WITH THESE ADS AND- 
-Doki: ...wait, what?
-Doki: This... seems familiar.
+Doki: What the...
+Doki: These ads are getting weirder and weirder…
+Doki: ?...
 ===
 
 title: workHeyYoureNotSupposedToTouchThatButton

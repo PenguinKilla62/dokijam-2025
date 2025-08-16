@@ -7,6 +7,8 @@ public class ComputerChanger : MonoBehaviour
     public GameObject[] viruses;
     public GameObject[] everythingElse;
     public GameObject noButton;
+    public Sprite[] magicAdImages;
+    private int currSpriteIndex = 0;
 
     public void ShutdownEverythingElse()
     {
@@ -60,13 +62,15 @@ public class ComputerChanger : MonoBehaviour
 
     public void boo()
     {
-        viruses[2].SetActive(false);
-        // Move around the virus a lil in a random direction
-        Vector2 randomDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
-        float moveDistance = Random.Range(0.5f, 1.5f);
-        viruses[2].transform.position += (Vector3)randomDirection * moveDistance;
-        YarnCommandHandler commandHandler = FindFirstObjectByType<YarnCommandHandler>();
-        commandHandler.PlayYarn("workHeyYoureNotSupposedToTouchThatButton");
+        if (viruses[2].GetComponent<Image>().sprite != magicAdImages[4])
+        {
+            currSpriteIndex += 1;
+            viruses[2].GetComponent<Image>().sprite = magicAdImages[currSpriteIndex];
+        }
+        else
+        {
+            itsTime();
+        }
     }
 
     public void HideNoButton()

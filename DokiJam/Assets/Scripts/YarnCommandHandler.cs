@@ -14,7 +14,9 @@ public class YarnCommandHandler : MonoBehaviour
     public void Start()
     {
         variableStorage = FindFirstObjectByType<InMemoryVariableStorage>();
+        
         dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+        dialogueRunner.LoadStateFromPersistentStorage("DokiJamState");
 
         dialogueRunner.onNodeStart.AddListener(OnNodeStart);
         dialogueRunner.onNodeComplete.AddListener(OnNodeComplete);
@@ -32,6 +34,7 @@ public class YarnCommandHandler : MonoBehaviour
             if (dokiTalk != null)
             {
                 dokiTalk.enabled = false;
+                dokiTalk.Stop();
                 Debug.Log("DokiTalk component disabled");
             }
             else
@@ -113,6 +116,74 @@ public class YarnCommandHandler : MonoBehaviour
         Debug.Log("Popup destroy command called");
         ComputerChanger computerChanger = FindFirstObjectByType<ComputerChanger>();
         computerChanger.HideNoButton();
+    }
+
+    [YarnCommand("MoveRight")]
+    public void MoveRight()
+    {
+        Debug.Log("Moving left");
+        GameObject doki = GameObject.Find("Doki");
+        if (doki != null)
+        {
+            DokiActions dokiActions = doki.GetComponent<DokiActions>();
+            if (dokiActions != null)
+            {
+                dokiActions.MoveRight();
+            }
+            else
+            {
+                Debug.LogWarning("DokiActions component not found on Doki game object");
+            }
+        }
+        else
+        {
+            Debug.Log("Doki game object not found");
+        }
+    }
+
+    [YarnCommand("lookAroundConfused")]
+    public void LookAroundConfused()
+    {
+        Debug.Log("Looking around confused");
+        GameObject doki = GameObject.Find("Doki");
+        if (doki != null)
+        {
+            DokiActions dokiActions = doki.GetComponent<DokiActions>();
+            if (dokiActions != null)
+            {
+                // doki looks first to the left and then to the right, down, and then back up
+                dokiActions.LookAroundConfused();
+            }
+            else
+            {
+                Debug.LogWarning("DokiActions component not found on Doki game object");
+            }
+        }
+        else
+        {
+            Debug.Log("Doki game object not found");
+        }
+    }
+
+    [YarnCommand("updateMintVar")]
+    public void UpdateMintVar()
+    {
+        Debug.Log("Updating Mint variable");
+        if (variableStorage != null)
+        {
+            variableStorage.SetValue("$seenMint", true);
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");   
+        }
+        else
+        {
+            Debug.LogWarning("Variable storage not found");
+        }
+    }
+
+    public void SeeBoss()
+    {
+        Debug.Log("Saw boss");
+        PlayYarn("Office_Boss");
     }
 
     public void PlayYarn(string yarnFileName)

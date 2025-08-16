@@ -22,6 +22,8 @@ public class AdPopup : MonoBehaviour
 
     private bool showing = true;
 
+    public GameObject actualAd;
+
     public void SetContainerElementsVisibility(bool visible)
     {
         Debug.Log("Container: " + visible);
@@ -54,6 +56,16 @@ public class AdPopup : MonoBehaviour
         if (current_time_seconds_elapsed >= time_seconds && currentCount < totalCount && showing == false)
         {
             ShowContainerImage();
+        }
+        else if (current_time_seconds_elapsed >= time_seconds && currentCount < totalCount && showing == true)
+        {
+            // time to spawn more
+            // float randX = UnityEngine.Random.Range(-1f, 1f);
+            // float randY = UnityEngine.Random.Range(-1f, 1f);
+            // var newAd = Instantiate(actualAd, actualAd.transform.position + new Vector3(randX, randY, actualAd.transform.position.z), Quaternion.identity);
+            // Transform adTransform = newAd.transform.parent;
+            // newAd.transform.SetParent(adTransform);
+            // current_time_seconds_elapsed = 0;
         }
     }
 }

@@ -1,9 +1,5 @@
 ﻿title: MintStage_Start
 ---
-Doki: What a creepy… and… cute? Cave? 
-
-Doki: Why would a tomato be here-
-
 ???: BOO!
 
 Doki: AHHHH!!
@@ -160,4 +156,13 @@ Doki: But at least you can say you've made a friend now, good luck on making mor
 
 Mint: W-whatever! Like I'd make another friend! I'm not that greedy. Hmh!
 
+<<set $seenMint to true>>
+<<updateMintVar YarnCommandHandler>>
+===
+
+title: MintStage_Start_Actual
+---
+Doki: What a creepy… and… cute? Cave? 
+
+Doki: Why would a tomato be here...?
 ===

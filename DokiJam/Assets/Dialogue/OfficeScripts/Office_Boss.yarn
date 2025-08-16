@@ -1,0 +1,23 @@
+﻿title: Office_Boss
+---
+<<if $seenBoss is true>>
+    <<jump Office_boss2>>
+<<endif>>
+<<set $seenBoss to true>>
+Boss: Doki, what are you doing???
+
+Boss: We need you working on coloring that new company logo!
+
+Boss: They're doing a company audit tomorrow! We need to get moving!
+
+Doki: Sorry, Boss... I'll get to it.
+
+Let's get back to my desk before the boss yells at me again.
+<<MoveRight YarnCommandHandler>>
+===
+
+title: Office_boss2
+---
+Doki: I really don't wanna go back to the boss.
+<<MoveRight YarnCommandHandler>>
+===
