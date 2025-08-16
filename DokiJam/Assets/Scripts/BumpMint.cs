@@ -3,6 +3,7 @@ using UnityEngine;
 public class BumpMint : MonoBehaviour
 {
     public bool bumpMintOnTrigger = true;
+    public Sprite[] sprites;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +13,8 @@ public class BumpMint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Update the sprite based on time
+        GetComponent<SpriteRenderer>().sprite = sprites[(int)(Time.time * 5) % sprites.Length];
     }
 
     void OnTriggerEnter2D(Collider2D other)
