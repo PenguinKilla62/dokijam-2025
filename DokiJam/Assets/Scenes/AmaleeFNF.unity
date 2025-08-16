@@ -669,6 +669,7 @@ MonoBehaviour:
   audioSource: {fileID: 265985787}
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 1
+  input_health_timeout_secs: 1.5
 --- !u!70 &222483348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -919,11 +920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.z
@@ -1496,6 +1497,7 @@ MonoBehaviour:
   audioSource: {fileID: 1531791815}
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 3
+  input_health_timeout_secs: 1.5
 --- !u!70 &597550292
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2031,6 +2033,7 @@ MonoBehaviour:
   audioSource: {fileID: 1387899233}
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 2
+  input_health_timeout_secs: 1.5
 --- !u!70 &1022404747
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3182,7 +3185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteNum: 0
-  songName: untitled
+  songName: mus_dokirap_doki
   LaneNum: 
   NoteType: 
   NotesTime: []
@@ -3752,6 +3755,7 @@ MonoBehaviour:
   audioSource: {fileID: 138201243}
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 0
+  input_health_timeout_secs: 1.5
 --- !u!70 &2022998354
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4030,7 +4034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteNum: 0
-  songName: untitled
+  songName: mus_dokirap_amalee
   LaneNum: 
   NoteType: 
   NotesTime: []
@@ -4107,11 +4111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalScale.z
@@ -4151,7 +4155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -4.9875
       objectReference: {fileID: 0}
     - target: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -101,26 +101,34 @@ public class Game : MonoBehaviour
         musicSource.Stop();
     }
 
+    async Task LoadNotes()
+    { 
+        var amaleeTask = amaleeNoteManager.Load(amaleeNoteManager.songName);
+        var dokiTask = dokiNoteManager.Load(dokiNoteManager.songName);
+
+        List<Task> taskList = new List<Task>() { amaleeTask, dokiTask };
+        await Task.WhenAll(taskList);
+    }
+
     async Task StartMusic()
     {
         if (musicSource != null && musicClip != null && amaleeNoteManager != null && dokiNoteManager != null)
         {
-            var amaleeTask = amaleeNoteManager.Load(amaleeNoteManager.songName);
-            var dokiTask = dokiNoteManager.Load(dokiNoteManager.songName);
-
-            List<Task> taskList = new List<Task>(){ amaleeTask, dokiTask };
-            await Task.WhenAll(taskList);
+            amaleeNoteManager.PauseOrUnPauseNotes(false);
+            dokiNoteManager.PauseOrUnPauseNotes(false);
 
             musicSource.PlayOneShot(musicClip);
 
             amaleeAudioSource.PlayOneShot(amaleeAudioClip);
             dokiAudioSource.PlayOneShot(dokiAudioClip);
+
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     async Task Start()
     {
+        await LoadNotes();
         await StartMusic();
         healthText.text = currentHitPoints.ToString();
         

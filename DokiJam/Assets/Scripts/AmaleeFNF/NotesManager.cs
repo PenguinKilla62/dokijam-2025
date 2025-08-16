@@ -51,6 +51,15 @@ public class NotesManager : MonoBehaviour
         //Load(songName);
     }
 
+    public void PauseOrUnPauseNotes(bool value)
+    {
+        foreach (var note in NotesObj)
+        {
+            var notesComponent = note.GetComponent<Notes>();
+            notesComponent.isPaused = value;
+        }
+    }
+
     public async Task Load(string SongName)
     {
         Debug.Log(SongName);
@@ -67,7 +76,7 @@ public class NotesManager : MonoBehaviour
             NotesTime.Add(time);
             LaneNum.Add(inputJson.notes[i].block);
             NoteType.Add(inputJson.notes[i].type);
-            
+
 
             float y = 55f - (NotesTime[i] * NotesSpeed);
             float x = inputJson.notes[i].block * -35 + 50.0f;

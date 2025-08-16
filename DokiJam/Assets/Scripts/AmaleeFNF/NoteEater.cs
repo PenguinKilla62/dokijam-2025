@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,11 +29,21 @@ public class NoteEater : MonoBehaviour
 
     private bool triggerActive = false;
 
+    private Dictionary<string, bool> activeTriggerList = new Dictionary<string, bool>();
+
     private bool miss = false;
 
     private Game game;
 
     private InputSystem_Actions inputActions;
+
+    [SerializeField]
+    public float input_health_timeout_secs = 1.5f;
+
+
+    private float current_input_health_timeout_secs = 1.5f;
+
+    private bool input_health_timeout = false;
 
 
     void Awake()
@@ -66,13 +78,15 @@ public class NoteEater : MonoBehaviour
     {
         Debug.Log("collided with" + collision.gameObject.name);
         triggerActive = true;
-    }
+        activeTriggerList.Add(collision.gameObject.GetHashCode().ToString(), true);
+    } 
 
     void OnTriggerStay2D(Collider2D collision)
     {
         var hit = transform.position.y - collision.transform.position.y;
-        if (controlActive && hit <= 5 && hit >= -5)
+        if (controlActive && hit <= 20 && hit >= -20)
         {
+            activeTriggerList[collision.gameObject.GetHashCode().ToString()] = false;
             Destroy(collision.gameObject);
             triggerActive = false;
             if (audioSource.isPlaying)
@@ -85,10 +99,16 @@ public class NoteEater : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D()
+    void OnTriggerExit2D(Collider2D collider)
     {
         game.AddHealth(-1);
         triggerActive = false;
+        var hashCode = collider.gameObject.GetHashCode().ToString();
+
+        if (activeTriggerList.ContainsKey(hashCode))
+        {
+            activeTriggerList[hashCode] = false;
+        }
     }
 
     async Task Update()
@@ -116,21 +136,35 @@ public class NoteEater : MonoBehaviour
             }
         }
 
-        
-        if (controlActive)
-            {
 
-                if (triggerActive == false)
+        if (controlActive)
+        {
+            if (!activeTriggerList.ContainsValue(true))
+            {
+                if (!input_health_timeout)
                 {
                     game.AddHealth(-1);
                     miss = true;
+                    controlActive = false;
+                    input_health_timeout = true;
+                    current_input_health_timeout_secs = input_health_timeout_secs;
                 }
             }
+        }
 
         if (miss)
         {
             await Task.Delay(100);
             miss = false;
+        }
+
+        if (input_health_timeout == true && current_input_health_timeout_secs > 0)
+        {
+            current_input_health_timeout_secs -= Time.deltaTime;
+        }
+        else if (input_health_timeout && current_input_health_timeout_secs <= 0)
+        {
+            input_health_timeout = false;
         }
     }
 }
