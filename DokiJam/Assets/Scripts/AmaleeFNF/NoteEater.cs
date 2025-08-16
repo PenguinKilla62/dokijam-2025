@@ -36,8 +36,11 @@ public class NoteEater : MonoBehaviour
 
     void Awake()
     {
+        
         inputActions = new InputSystem_Actions();
         inputActions.Player.Enable();
+        inputActions.Player.Arrows.Enable();
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -90,24 +93,27 @@ public class NoteEater : MonoBehaviour
 
     async Task Update()
     {
-
-        var readAxis = inputActions.Player.Arrows.ReadValue<Vector2>();
-        controlActive = false;
-        if (readAxis == Vector2.left && noteType == NoteType.left)
+        if (inputActions.Player.Arrows.IsPressed())
         {
-            controlActive = true;
-        }
-        else if (readAxis == Vector2.down && noteType == NoteType.down)
-        {
-            controlActive = true;
-        }
-        else if (readAxis == Vector2.up && noteType == NoteType.up)
-        {
-            controlActive = true;
-        }
-        else if (readAxis == Vector2.right && noteType == NoteType.right)
-        {
-            controlActive = true;
+            Debug.Log(inputActions.Player.Arrows.ReadValue<Vector2>());
+            var readAxis = inputActions.Player.Arrows.ReadValue<Vector2>();
+            controlActive = false;
+            if (readAxis == Vector2.left && noteType == NoteType.left)
+            {
+                controlActive = true;
+            }
+            else if (readAxis == Vector2.down && noteType == NoteType.down)
+            {
+                controlActive = true;
+            }
+            else if (readAxis == Vector2.up && noteType == NoteType.up)
+            {
+                controlActive = true;
+            }
+            else if (readAxis == Vector2.right && noteType == NoteType.right)
+            {
+                controlActive = true;
+            }
         }
 
         

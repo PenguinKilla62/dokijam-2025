@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 1916a659fe13c46338d706ff1ef16850
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2485009584523414153
+    second: doki idle_0
+  - first:
+      213: -2070057684687425986
+    second: doki idle_1
+  - first:
+      213: -4718928868699770618
+    second: doki idle_2
+  - first:
+      213: 7938681594781918174
+    second: doki idle_3
+  - first:
+      213: 1016426755077333506
+    second: doki idle_4
+  - first:
+      213: -2620000125325527393
+    second: doki idle_5
+  - first:
+      213: 7095255818892694193
+    second: doki idle_6
+  - first:
+      213: 7553406332481738314
+    second: doki idle_7
+  - first:
+      213: -5109552682149890824
+    second: doki idle_8
+  - first:
+      213: -784071206980393786
+    second: doki idle_9
+  - first:
+      213: -3368120649691905081
+    second: doki idle_10
+  - first:
+      213: 295780688270290096
+    second: doki idle_11
+  - first:
+      213: -5109947115779034534
+    second: doki idle_12
+  - first:
+      213: -4488952599613620037
+    second: doki idle_13
+  - first:
+      213: 1917792171985384202
+    second: doki idle_14
+  - first:
+      213: -626512893018917547
+    second: doki idle_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: doki idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5327
+        width: 980
+        height: 2865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7757a03f2f8738dd0800000000000000
+      internalID: -2485009584523414153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_1
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 5325
+        width: 982
+        height: 2867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e63afd08da543e0800000000000000
+      internalID: -2070057684687425986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_2
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 5325
+        width: 981
+        height: 2867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60170d4223ff28eb0800000000000000
+      internalID: -4718928868699770618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_3
+      rect:
+        serializedVersion: 2
+        x: 2982
+        y: 5323
+        width: 982
+        height: 2869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed368e979dcdb2e60800000000000000
+      internalID: 7938681594781918174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_4
+      rect:
+        serializedVersion: 2
+        x: 3979
+        y: 5322
+        width: 981
+        height: 2870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 202669c9fb21b1e00800000000000000
+      internalID: 1016426755077333506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_5
+      rect:
+        serializedVersion: 2
+        x: 4981
+        y: 5322
+        width: 975
+        height: 2870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f963e7274c3e3abd0800000000000000
+      internalID: -2620000125325527393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_6
+      rect:
+        serializedVersion: 2
+        x: 5968
+        y: 5322
+        width: 974
+        height: 2870
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b25f933399677260800000000000000
+      internalID: 7095255818892694193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_7
+      rect:
+        serializedVersion: 2
+        x: 6961
+        y: 5313
+        width: 977
+        height: 2879
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4692cb2a0713d860800000000000000
+      internalID: 7553406332481738314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2433
+        width: 977
+        height: 2881
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4bf4b38e83719b0800000000000000
+      internalID: -5109552682149890824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_9
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 2452
+        width: 981
+        height: 2861
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c46255346b6e15f0800000000000000
+      internalID: -784071206980393786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_10
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 2455
+        width: 981
+        height: 2859
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3c47a3d180241d0800000000000000
+      internalID: -3368120649691905081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_11
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 2439
+        width: 979
+        height: 2875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc65c708f2da1400800000000000000
+      internalID: 295780688270290096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_12
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 2434
+        width: 977
+        height: 2880
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5275fefb22d519b0800000000000000
+      internalID: -5109947115779034534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_13
+      rect:
+        serializedVersion: 2
+        x: 4990
+        y: 2442
+        width: 974
+        height: 2872
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0c676e46904b1c0800000000000000
+      internalID: -4488952599613620037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_14
+      rect:
+        serializedVersion: 2
+        x: 5970
+        y: 2443
+        width: 981
+        height: 2871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03b63cc1dd5d9a10800000000000000
+      internalID: 1917792171985384202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doki idle_15
+      rect:
+        serializedVersion: 2
+        x: 6963
+        y: 2445
+        width: 981
+        height: 2869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555b76cd7dd2e47f0800000000000000
+      internalID: -626512893018917547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      doki idle_0: -2485009584523414153
+      doki idle_1: -2070057684687425986
+      doki idle_10: -3368120649691905081
+      doki idle_11: 295780688270290096
+      doki idle_12: -5109947115779034534
+      doki idle_13: -4488952599613620037
+      doki idle_14: 1917792171985384202
+      doki idle_15: -626512893018917547
+      doki idle_2: -4718928868699770618
+      doki idle_3: 7938681594781918174
+      doki idle_4: 1016426755077333506
+      doki idle_5: -2620000125325527393
+      doki idle_6: 7095255818892694193
+      doki idle_7: 7553406332481738314
+      doki idle_8: -5109552682149890824
+      doki idle_9: -784071206980393786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

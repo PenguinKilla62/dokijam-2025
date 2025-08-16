@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Doki RIGHT.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Doki RIGHT0000" x="0" y="0" width="1095" height="2886" frameX="-3" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0001" x="1095" y="0" width="1096" height="2886" frameX="-2" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0002" x="2191" y="0" width="1096" height="2886" frameX="-2" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0003" x="3287" y="0" width="1096" height="2886" frameX="-2" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0004" x="4383" y="0" width="1097" height="2886" frameX="-1" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0005" x="5480" y="0" width="1097" height="2886" frameX="-1" frameY="0" frameWidth="1098" frameHeight="2886"/>
+	<SubTexture name="Doki RIGHT0006" x="6577" y="0" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0007" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0008" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0009" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0010" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0011" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0012" x="0" y="2886" width="1098" height="2886"/>
+	<SubTexture name="Doki RIGHT0013" x="0" y="2886" width="1098" height="2886"/>
+</TextureAtlas>

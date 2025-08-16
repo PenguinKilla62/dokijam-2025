@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Ama up.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="AmaFNF0000" x="0" y="0" width="1270" height="2787" frameX="-26" frameY="-19" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0001" x="1270" y="0" width="1270" height="2788" frameX="-26" frameY="-19" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0002" x="2540" y="0" width="1270" height="2789" frameX="-26" frameY="-19" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0003" x="3810" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0004" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0005" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0006" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0007" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0008" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0009" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0010" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0011" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0012" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+	<SubTexture name="AmaFNF0013" x="5106" y="0" width="1296" height="2807" frameX="0" frameY="0" frameWidth="1296" frameHeight="2808"/>
+</TextureAtlas>

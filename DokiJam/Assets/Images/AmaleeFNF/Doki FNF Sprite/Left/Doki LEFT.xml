@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Doki LEFT.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Doki LEFT0000" x="0" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0001" x="983" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0002" x="1966" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0003" x="2949" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0004" x="3932" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0005" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0006" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0007" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0008" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0009" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0010" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0011" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0012" x="4915" y="0" width="983" height="2878"/>
+	<SubTexture name="Doki LEFT0013" x="4915" y="0" width="983" height="2878"/>
+</TextureAtlas>
