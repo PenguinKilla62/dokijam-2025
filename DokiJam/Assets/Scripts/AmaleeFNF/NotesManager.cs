@@ -36,6 +36,11 @@ public class NotesManager : MonoBehaviour
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
 
+    [SerializeField] GameObject leftNote;
+    [SerializeField] GameObject downNote;
+    [SerializeField] GameObject upNote;
+    [SerializeField] GameObject rightNote;
+
     [SerializeField] 
     Canvas canvas;
 
@@ -64,8 +69,34 @@ public class NotesManager : MonoBehaviour
             NoteType.Add(inputJson.notes[i].type);
             
 
-            float z = NotesTime[i] * NotesSpeed;
-            GameObject newNoteObj = Instantiate(noteObj, new Vector3(inputJson.notes[i].block * -35 + 50.0f, 55f - z, 0.55f), Quaternion.identity);
+            float y = 55f - (NotesTime[i] * NotesSpeed);
+            float x = inputJson.notes[i].block * -35 + 50.0f;
+            float z = 0.55f;
+
+            Vector3 newPosition = new Vector3(x, y, z);
+
+            var block = inputJson.notes[i].block;
+            GameObject newNoteObj;
+            if (block == 3)
+            {
+                newNoteObj = Instantiate(leftNote, newPosition, Quaternion.identity);
+            }
+            else if (block == 2)
+            {
+                newNoteObj = Instantiate(downNote, newPosition, Quaternion.identity);
+            }
+            else if (block == 1)
+            {
+                newNoteObj = Instantiate(upNote, newPosition, Quaternion.identity);
+            }
+            else if (block == 0)
+            {
+                newNoteObj = Instantiate(rightNote, newPosition, Quaternion.identity);
+            }
+            else
+            {
+                newNoteObj = Instantiate(noteObj, newPosition, Quaternion.identity);
+            }
             newNoteObj.transform.SetParent(canvas.transform, false);
             NotesObj.Add(newNoteObj);
         }

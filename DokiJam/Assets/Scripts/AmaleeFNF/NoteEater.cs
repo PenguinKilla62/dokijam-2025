@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
 
 public class NoteEater : MonoBehaviour
 {
@@ -13,7 +12,16 @@ public class NoteEater : MonoBehaviour
     AudioClip audioClip;
 
     [SerializeField]
-    InputAction control;
+    public enum NoteType
+    {
+        left = 0,
+        down = 1,
+        up = 2,
+        right = 3
+    };
+
+    [SerializeField]
+    public NoteType noteType;
 
     private bool controlActive = false;
 
@@ -23,24 +31,21 @@ public class NoteEater : MonoBehaviour
 
     private Game game;
 
+    private InputSystem_Actions inputActions;
+
+
+    void Awake()
+    {
+        inputActions = new InputSystem_Actions();
+        inputActions.Player.Enable();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        game = GetComponent<Game>();
-    }
-
-    void OnEnable()
-    {
-        control.Enable(); // Actions must be enabled to receive input
-        // control.performed += ControlPerformed;
-        // control.canceled += ControlCanceled;
-    }
-
-    void OnDisable()
-    {
-        // control.performed -= ControlPerformed;
-        // control.canceled -= ControlCanceled;
-        control.Disable();
+        var gameObject = GameObject.Find("Game");
+        game = gameObject.GetComponent<Game>();
+        Debug.Log(game);
     }
 
     void ControlPerformed(InputAction.CallbackContext context)
@@ -86,16 +91,35 @@ public class NoteEater : MonoBehaviour
     async Task Update()
     {
 
-        controlActive = control.IsPressed();
-        if (controlActive)
+        var readAxis = inputActions.Player.Arrows.ReadValue<Vector2>();
+        controlActive = false;
+        if (readAxis == Vector2.left && noteType == NoteType.left)
         {
-            
-            if (triggerActive == false)
-            {
-                game.AddHealth(-1);
-                miss = true;
-            }
+            controlActive = true;
         }
+        else if (readAxis == Vector2.down && noteType == NoteType.down)
+        {
+            controlActive = true;
+        }
+        else if (readAxis == Vector2.up && noteType == NoteType.up)
+        {
+            controlActive = true;
+        }
+        else if (readAxis == Vector2.right && noteType == NoteType.right)
+        {
+            controlActive = true;
+        }
+
+        
+        if (controlActive)
+            {
+
+                if (triggerActive == false)
+                {
+                    game.AddHealth(-1);
+                    miss = true;
+                }
+            }
 
         if (miss)
         {

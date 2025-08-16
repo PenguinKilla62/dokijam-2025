@@ -18,7 +18,8 @@ public class EndBar : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        game = GetComponent<Game>();
+        GameObject gameObject = GameObject.Find("Game");
+        game = gameObject.GetComponent<Game>();
     }
 
     // Update is called once per frame
@@ -35,27 +36,26 @@ public class EndBar : MonoBehaviour
     async Task OnTriggerStay2D(Collider2D collision)
     {
         var hit = transform.position.y - collision.transform.position.y;
-        if (hit <= 5 && hit >= -5)
+        
+        Destroy(collision.gameObject);
+
+        if (triggerHit)
         {
-            Destroy(collision.gameObject);
-
-            if (triggerHit)
+            if (audioSource.isPlaying)
             {
-                if (audioSource.isPlaying)
-                {
-                    audioSource.Stop();
-                }
-                audioSource.PlayOneShot(audioClip);
-
-                game.MuteUnmuteDoki(true);
-                await Task.Delay(100);
-                game.MuteUnmuteDoki(false);
-
-                game.ClearHitCombo();
+                audioSource.Stop();
             }
-            
-            
+            audioSource.PlayOneShot(audioClip);
+
+            game.MuteUnmuteDoki(true);
+            await Task.Delay(100);
+            game.MuteUnmuteDoki(false);
+
+            game.ClearHitCombo();
         }
+            
+            
+        
 
     }
 }
