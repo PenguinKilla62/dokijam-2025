@@ -1,10 +1,25 @@
 using UnityEngine;
 using Yarn.Unity;
 using System.Collections;
+using UnityEngine.Events;
+using System;
 
 public class YarnCommandHandler : MonoBehaviour
 {
     private bool waiting = false;
+    private bool seenBoss = false;
+    private InMemoryVariableStorage variableStorage;
+    private DialogueRunner dialogueRunner;
+
+    public void Start()
+    {
+        variableStorage = FindFirstObjectByType<InMemoryVariableStorage>();
+        dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+
+        dialogueRunner.onNodeStart.AddListener(OnNodeStart);
+        dialogueRunner.onNodeComplete.AddListener(OnNodeComplete);
+    }
+
     [YarnCommand("removeActions")]
     public void RemoveActions()
     {
@@ -13,7 +28,7 @@ public class YarnCommandHandler : MonoBehaviour
         GameObject doki = GameObject.Find("Doki");
         if (doki != null)
         {
-            DokiTalk dokiTalk = doki.GetComponent<DokiTalk>();
+            DokiActions dokiTalk = doki.GetComponent<DokiActions>();
             if (dokiTalk != null)
             {
                 dokiTalk.enabled = false;
@@ -38,7 +53,7 @@ public class YarnCommandHandler : MonoBehaviour
         GameObject doki = GameObject.Find("Doki");
         if (doki != null)
         {
-            DokiTalk dokiTalk = doki.GetComponent<DokiTalk>();
+            DokiActions dokiTalk = doki.GetComponent<DokiActions>();
             if (dokiTalk != null)
             {
                 dokiTalk.enabled = true;
@@ -98,5 +113,16 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    private void OnNodeStart(string nodeName)
+    {
+        Debug.Log("Node started: " + nodeName);
+        RemoveActions();
+        return;
+    }
 
+    private void OnNodeComplete(string nodeName)
+    {
+        EnableActions();
+        return;
+    }
 }
