@@ -1,12 +1,17 @@
 ﻿title: AmaStage_Start
 ---
-Doki: “Whoa~! This place is glistening.”
+<<if $startAma is true>>
+    <<jump AmaStage_End>>
+<<endif>>
+Doki: Whoa~! This place is glistening.
 
 Doki: *sniff sniff * Why… does it kind of smell like fish?...
 
 ???: HEY! WHO ARE YOU CALLING A FISH?!
 
-Doki: Huh…?
+<<lookAroundConfused YarnCommandHandler>>
+
+Doki: Huh?
 
 Monarch: That's Siren to you, Human. You may address me as Monarch, Monarch the Siren.
 
@@ -14,7 +19,7 @@ Monarch: Welcome to my cove~ I hail from the coldest of seas and have the strong
 
 Monarch: Behold me in all my beauty. Have you come to request a melody?
 
-Doki: Uh… no… I'm here for a magic tomato.
+Doki: Uh... no... I'm here for a magic tomato.
 
 Monarch: Eh-
 
@@ -26,13 +31,13 @@ Monarch: Ah~ So you must be an Adventurer. Indeed, I do have a magic tomato.
 
 Doki: Awesome! Is there any way I could have it?
 
-Monarch: Hmm…
+Monarch: ...
 
 Monarch: How about a trade? 
 
-Doki: I… don't have anything of value. What could you possibly want from me? 
+Doki: I... don't have anything of value. What could you possibly want from me? 
 
-Monarch: haha… You're voice, of course.
+Monarch: haha... Your voice, of course.
 
 Doki: My?... Voice?
 
@@ -52,7 +57,7 @@ Monarch: Well, it has gotten a bit dull around in my waters.
 
 Monarch: How about a singing competition? You against me.
 
-Doki: Hmm…
+Doki: Hmm...
 
 Monarch: What do you say? Scared? 
 
@@ -72,7 +77,10 @@ Monarch: Come again?
 
 Doki: I said rapping, Mermaid! 
 
-Monarch: I-I have… never heard of that before. What type of adventurer are you, human?...
+Monarch: I-I have... never heard of that before. What type of adventurer are you, human?...
 
-Doki: A rapping one…
+Doki: A rapping one...
+
+<<startRapping YarnCommandHandler>>
+<<set $startAma to true>>
 ===

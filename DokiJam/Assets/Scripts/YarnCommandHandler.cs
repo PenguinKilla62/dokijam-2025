@@ -180,6 +180,28 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("updateAmaVar")]
+    public void UpdateAmaVar()
+    {
+        Debug.Log("Updating Ama variable");
+        if (variableStorage != null)
+        {
+            variableStorage.SetValue("$seenAma", true);
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
+        }
+        else
+        {
+            Debug.LogWarning("Variable storage not found");
+        }
+    }
+
+    [YarnCommand("startRapping")]
+    public void StartRapping()
+    {
+        // Go to the FNF scene
+        Debug.Log("Starting rapping");
+    }
+
     public void SeeBoss()
     {
         Debug.Log("Saw boss");

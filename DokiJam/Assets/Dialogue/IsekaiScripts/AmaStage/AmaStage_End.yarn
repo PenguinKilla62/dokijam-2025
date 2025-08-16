@@ -11,4 +11,7 @@ Monarch: RAPPING!
 Doki: Sorry, mermaid, no can do, I've got a third tomato to find. My reward, please.
 
 Monarch: Oh~ Marvelous adventurer, thank you for introducing me to the musical wonder that is rapping. Here is your reward! I bid you adieu, now~ 
+
+<<set $seenAma to true>>
+<<updateAmaVar YarnCommandHandler>>
 ===
