@@ -41,7 +41,7 @@ public class YarnCommandHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Doki game object not found");
+            Debug.Log("Doki game object not found");
         }
     }
 
@@ -66,7 +66,7 @@ public class YarnCommandHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Doki game object not found");
+            Debug.Log("Doki game object not found");
         }
     }
 
@@ -84,11 +84,35 @@ public class YarnCommandHandler : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("IntroComputer");
     }
 
+    [YarnCommand("finishWork")]
+    public void FinishWork()
+    {
+        Debug.Log("Finished work");
+        ComputerChanger computerChanger = FindFirstObjectByType<ComputerChanger>();
+        computerChanger.ShutdownEverythingElse();
+    }
+
+    [YarnCommand("popups")]
+    public void Popups(int whichAd)
+    {
+        Debug.Log("First popup command called");
+        ComputerChanger computerChanger = FindFirstObjectByType<ComputerChanger>();
+        computerChanger.DisplayAd(whichAd);
+    }
+
     [YarnCommand("isekai")]
     public void Isekai()
     {
         Debug.Log("Isekai command called");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Isekai");
+    }
+
+    [YarnCommand("popupdestroy")]
+    public void PopupDestroy()
+    {
+        Debug.Log("Popup destroy command called");
+        ComputerChanger computerChanger = FindFirstObjectByType<ComputerChanger>();
+        computerChanger.HideNoButton();
     }
 
     public void PlayYarn(string yarnFileName)
@@ -111,6 +135,12 @@ public class YarnCommandHandler : MonoBehaviour
         {
             Debug.LogWarning("DialogueSystem not found in the scene");
         }
+    }
+
+    public void MeetGod()
+    {
+        Debug.Log("chain reaction baybeeeee");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("WhiteSpace");
     }
 
     private void OnNodeStart(string nodeName)
