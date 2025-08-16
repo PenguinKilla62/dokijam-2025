@@ -20102,7 +20102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.64, y: 1.52}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -20154,7 +20154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -314239472330434393, guid: af5b175b26d0340418d4ab37027a9965, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20174,7 +20174,7 @@ Transform:
   m_GameObject: {fileID: 1092734616}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 6.67, z: 0}
+  m_LocalPosition: {x: 0.01, y: 6.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20194,6 +20194,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpMintOnTrigger: 1
+  sprites:
+  - {fileID: -314239472330434393, guid: af5b175b26d0340418d4ab37027a9965, type: 3}
+  - {fileID: -7503166641940222224, guid: cf86a47599435a54489d3e5daa8ea0bc, type: 3}
+  - {fileID: 8508026182618068797, guid: 8dad5f04699410c48b19b781c9a4cb76, type: 3}
+  - {fileID: -7770593825634028246, guid: 1066039a6c7fdc7488c14137a4869362, type: 3}
+  - {fileID: -7142994782621348031, guid: 2dcad9f24a5445448851d28d6fb44fe0, type: 3}
+  - {fileID: 6383474841752038903, guid: c89f2b2f6ca79614f8f2f346f39ec9df, type: 3}
+  - {fileID: -4313131833287182291, guid: 73ab5c191823faa469d0eb188fba99de, type: 3}
 --- !u!50 &1092734621
 Rigidbody2D:
   serializedVersion: 5

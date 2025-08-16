@@ -180,6 +180,85 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("updateAmaVar")]
+    public void UpdateAmaVar()
+    {
+        Debug.Log("Updating Ama variable");
+        if (variableStorage != null)
+        {
+            variableStorage.SetValue("$seenAma", true);
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
+        }
+        else
+        {
+            Debug.LogWarning("Variable storage not found");
+        }
+    }
+
+    [YarnCommand("sendBackToWhiteRoom")]
+    public void SendBackToWhiteRoom()
+    {
+        Debug.Log("Sending back to white room");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("WhiteSpace");
+    }
+
+    [YarnCommand("endGame")]
+    public void EndGame()
+    {
+        Debug.Log("Ending game");
+        if (variableStorage != null)
+        {
+            variableStorage.SetValue("$seenEnd", true);
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScreen");
+    }
+
+    [YarnCommand("startRapping")]
+    public void StartRapping()
+    {
+        // Go to the FNF scene
+        Debug.Log("Starting rapping");
+    }
+
+    [YarnCommand("whichGoddessSprite")]
+    public void WhichGoddessSprite(string spriteName)
+    {
+        Debug.Log("Changing goddess sprite to: " + spriteName);
+        WhiteSpaceHandler whiteSpaceHandler = FindFirstObjectByType<WhiteSpaceHandler>();
+        if (whiteSpaceHandler != null)
+        {
+            switch (spriteName)
+            {
+                case "happy":
+                    whiteSpaceHandler.ChangeGoddessHappy();
+                    break;
+                case "looking":
+                    whiteSpaceHandler.ChangeGoddessLooking();
+                    break;
+                case "teehee":
+                    whiteSpaceHandler.ChangeGoddessTeehee();
+                    break;
+                case "eyesClosed":
+                    whiteSpaceHandler.ChangeGoddessEyesClosed();
+                    break;
+                case "portalOpen":
+                    whiteSpaceHandler.ChangeGoddessPortalOpen();
+                    break;
+                case "portalOpenSolemn":
+                    whiteSpaceHandler.ChangeGoddessPortalOpenSolemn();
+                    break;
+                default:
+                    Debug.LogWarning("Unknown sprite name: " + spriteName);
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("WhiteSpaceHandler not found in the scene");
+        }
+    }
+
     public void SeeBoss()
     {
         Debug.Log("Saw boss");

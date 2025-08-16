@@ -11,4 +11,27 @@ Monarch: RAPPING!
 Doki: Sorry, mermaid, no can do, I've got a third tomato to find. My reward, please.
 
 Monarch: Oh~ Marvelous adventurer, thank you for introducing me to the musical wonder that is rapping. Here is your reward! I bid you adieu, now~ 
+
+Doki: Actually…
+
+Doki: By any chance, can you tell me how this magic tomato even got here? 
+
+Monarch: Oh! It just kind of appeared earlier today. Not sure where it came from…
+
+Monarch: It was as if someone set it outside my Cove, haha~
+
+Doki: What.
+
+Monarch: Strange is it~? 
+
+Monarch: Oh well, it's beyond my worries now. Enjoy your magic tomato adventurer~
+
+Doki: That goddess…
+
+Doki: Is gonna hear it from me…
+
+
+<<set $seenAma to true>>
+<<updateAmaVar YarnCommandHandler>>
+<<sendBackToWhiteRoom YarnCommandHandler>>
 ===

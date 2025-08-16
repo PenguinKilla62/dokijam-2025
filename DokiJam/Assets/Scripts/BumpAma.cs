@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class BumpMint : MonoBehaviour
+public class BumpAma : MonoBehaviour
 {
-    public bool bumpMintOnTrigger = true;
+    public bool bumpAmaOnTrigger = true;
     public Sprite[] sprites;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -20,11 +20,11 @@ public class BumpMint : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // has to be the player cuz nothing else moves lmao
-        if (bumpMintOnTrigger)
+        if (bumpAmaOnTrigger)
         {
             YarnCommandHandler yarnCommandHandler = FindFirstObjectByType<YarnCommandHandler>();
-            yarnCommandHandler.PlayYarn("MintStage_Start");
-            bumpMintOnTrigger = false;
+            yarnCommandHandler.PlayYarn("AmaStage_Start");
+            bumpAmaOnTrigger = false;
         }
     }
 }

@@ -1,5 +1,8 @@
 ﻿title: Office_start
 ---
+<<if $seenAma is true>>
+<<jump Office_finish>>
+<<endif>>
 Hmm… How long have I been asleep for?...
 What a way to use my college degree...
 Oh well, Imma take a stroll around the office to stretch my legs, maybe that'll help me wake up some more.
