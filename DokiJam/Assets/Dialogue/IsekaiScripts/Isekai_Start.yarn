@@ -1,5 +1,12 @@
 ﻿title: Isekai_Start
 ---
+<<if $seenAma is true>>
+    <<jump IsekaiAfterAma>>
+<<endif>>
+<<if $seenMint is true>>
+    <<jump IsekaiAfterMint>>
+<<endif>>
+<<if $seenIntro is false>>
 <<lookAroundConfused YarnCommandHandler>>
 Doki: ...
 
@@ -57,4 +64,6 @@ Doki: *sighs* picking up chores after a goddess... wow... so life changing.
 
 Doki: Let's get a move on so I can get outta here. 
 
+<<set $seenIntro to true>>
+<<endif>>
 ===

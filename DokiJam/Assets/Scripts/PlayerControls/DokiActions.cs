@@ -68,7 +68,7 @@ public class DokiActions : MonoBehaviour
         Debug.Log("DokiActions initialized");
     }
 
-    void Stop()
+    public void Stop()
     {
         rb.linearVelocity = Vector2.zero;
         Debug.Log("Movement stopped");
@@ -78,6 +78,13 @@ public class DokiActions : MonoBehaviour
     public void LookAroundConfused()
     {
         StartCoroutine(LookAroundCoroutine());
+    }
+
+    public void MoveRight()
+    {
+        animator.SetFloat("hVelocity", 1f);
+        animator.SetFloat("vVelocity", 0f);
+        rb.linearVelocity = Vector2.right * (speed/2);
     }
 
     IEnumerator LookAroundCoroutine()

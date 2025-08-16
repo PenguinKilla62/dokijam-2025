@@ -1,5 +1,15 @@
 ﻿title: Office_interactables_0
 ---
+<<if $seenBoss is false>>
+    <<jump Office_compooter>>
+<<endif>>
 Doki: Well... let's get working. I'm trying to clock out of here on time.
 <<startWork YarnCommandHandler>>
+===
+
+title: Office_compooter
+---
+This is my computer.
+I hate my job!
+Which is why I willingly installed 17 million viruses on it last night.
 ===
