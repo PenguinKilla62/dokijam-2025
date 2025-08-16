@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 public class AutoNoteEater : MonoBehaviour
 {
 
+    [SerializeField]
+    characterAnimator.AnimationState arrow = characterAnimator.AnimationState.Left;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +24,11 @@ public class AutoNoteEater : MonoBehaviour
         if (hit <= 5 && hit >= -5)
         {
             Destroy(collision.gameObject);
+
+            var gameObject = GameObject.Find("ama");
+            var characterAnimator = gameObject.GetComponent<characterAnimator>();
+            characterAnimator.currentAnimation = arrow;
+            characterAnimator.IdleTimeout = 2;
         }
     }
 
