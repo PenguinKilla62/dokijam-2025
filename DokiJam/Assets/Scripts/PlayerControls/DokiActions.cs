@@ -75,6 +75,30 @@ public class DokiActions : MonoBehaviour
         animator.SetFloat("xVelocity", 0f);
     }
 
+    public void LookAroundConfused()
+    {
+        StartCoroutine(LookAroundCoroutine());
+    }
+
+    IEnumerator LookAroundCoroutine()
+    {
+        Debug.Log("Looking around...");
+        animator.SetFloat("hVelocity", -1f); // left
+        animator.SetFloat("vVelocity", 0f);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetFloat("hVelocity", 1f);
+        animator.SetFloat("vVelocity", 0f);
+        yield return new WaitForSeconds(0.5f); // right
+        animator.SetFloat("vVelocity", -1f);
+        animator.SetFloat("hVelocity", 0f);
+        animator.SetBool("isBackward", false);
+        yield return new WaitForSeconds(0.5f); // down
+        animator.SetFloat("vVelocity", 1f);
+        animator.SetFloat("hVelocity", 0f);
+        animator.SetBool("isBackward", true);
+        yield return new WaitForSeconds(0.5f); // up
+    }
+
     void MoveAndAttack()
     {
         if (inputActions.Player.Move.IsPressed())
@@ -127,25 +151,26 @@ public class DokiActions : MonoBehaviour
 
         if (inputActions.Player.Attack.IsPressed() && elapsedTime >= timeBetweenAttacks)
         {
-            elapsedTime = 0f; // Reset the attack timer
-            Debug.Log("Attack pressed");
-            switch (currWeapon)
-            {
-                case 0:
-                    box.enabled = false;
-                    normalDragoon();
-                    box.enabled = true; // Re-enable the box collider after the attack
-                    break;
-                case 1:
-                    longDragoon();
-                    break;
-                case 2:
-                    beegDragoon();
-                    break;
-                default:
-                    Debug.LogError("Invalid weapon type selected: " + currWeapon);
-                    break;
-            }
+            // elapsedTime = 0f; // Reset the attack timer
+            // Debug.Log("Attack pressed");
+            // switch (currWeapon)
+            // {
+            //     case 0:
+            //         box.enabled = false;
+            //         normalDragoon();
+            //         box.enabled = true; // Re-enable the box collider after the attack
+            //         break;
+            //     case 1:
+            //         longDragoon();
+            //         break;
+            //     case 2:
+            //         beegDragoon();
+            //         break;
+            //     default:
+            //         Debug.LogError("Invalid weapon type selected: " + currWeapon);
+            //         break;
+            // }
+            // haha no more time ;;;
         }
     }
 

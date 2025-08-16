@@ -1,5 +1,5 @@
 ﻿title: Office_interactables_0
 ---
-Doki: Well… let's get working. I'm trying to clock out of here on time.
+Doki: Well... let's get working. I'm trying to clock out of here on time.
 <<startWork YarnCommandHandler>>
 ===

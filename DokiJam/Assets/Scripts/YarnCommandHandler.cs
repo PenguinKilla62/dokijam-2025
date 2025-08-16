@@ -115,6 +115,30 @@ public class YarnCommandHandler : MonoBehaviour
         computerChanger.HideNoButton();
     }
 
+    [YarnCommand("lookAroundConfused")]
+    public void LookAroundConfused()
+    {
+        Debug.Log("Looking around confused");
+        GameObject doki = GameObject.Find("Doki");
+        if (doki != null)
+        {
+            DokiActions dokiActions = doki.GetComponent<DokiActions>();
+            if (dokiActions != null)
+            {
+                // doki looks first to the left and then to the right, down, and then back up
+                dokiActions.LookAroundConfused();
+            }
+            else
+            {
+                Debug.LogWarning("DokiActions component not found on Doki game object");
+            }
+        }
+        else
+        {
+            Debug.Log("Doki game object not found");
+        }
+    }
+
     public void PlayYarn(string yarnFileName)
     {
         if (waiting)
