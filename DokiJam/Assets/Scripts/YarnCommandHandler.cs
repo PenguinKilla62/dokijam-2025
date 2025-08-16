@@ -202,6 +202,44 @@ public class YarnCommandHandler : MonoBehaviour
         Debug.Log("Starting rapping");
     }
 
+    [YarnCommand("whichGoddessSprite")]
+    public void WhichGoddessSprite(string spriteName)
+    {
+        Debug.Log("Changing goddess sprite to: " + spriteName);
+        WhiteSpaceHandler whiteSpaceHandler = FindFirstObjectByType<WhiteSpaceHandler>();
+        if (whiteSpaceHandler != null)
+        {
+            switch (spriteName)
+            {
+                case "happy":
+                    whiteSpaceHandler.ChangeGoddessHappy();
+                    break;
+                case "looking":
+                    whiteSpaceHandler.ChangeGoddessLooking();
+                    break;
+                case "teehee":
+                    whiteSpaceHandler.ChangeGoddessTeehee();
+                    break;
+                case "eyesClosed":
+                    whiteSpaceHandler.ChangeGoddessEyesClosed();
+                    break;
+                case "portalOpen":
+                    whiteSpaceHandler.ChangeGoddessPortalOpen();
+                    break;
+                case "portalOpenSolemn":
+                    whiteSpaceHandler.ChangeGoddessPortalOpenSolemn();
+                    break;
+                default:
+                    Debug.LogWarning("Unknown sprite name: " + spriteName);
+                    break;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("WhiteSpaceHandler not found in the scene");
+        }
+    }
+
     public void SeeBoss()
     {
         Debug.Log("Saw boss");
