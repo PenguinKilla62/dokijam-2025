@@ -83,4 +83,5 @@ Doki: A rapping one...
 
 <<startRapping YarnCommandHandler>>
 <<set $startAma to true>>
+<<updateAmaVar YarnCommandHandler>>
 ===
