@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 [Serializable]
@@ -45,7 +46,7 @@ public class NotesManager : MonoBehaviour
         //Load(songName);
     }
 
-    public void Load(string SongName)
+    public async Task Load(string SongName)
     {
         Debug.Log(SongName);
         string inputString = Resources.Load<TextAsset>(SongName).ToString();

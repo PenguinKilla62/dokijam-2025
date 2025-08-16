@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
@@ -36,24 +37,64 @@ public class Game : MonoBehaviour
     [SerializeField]
     public NotesManager dokiNoteManager;
 
-    void AddHitCombo()
+    private bool dokiMuted = false;
+    private bool amaleeMuted = false;
+
+    [SerializeField]
+    public AudioSource dokiAudioSource;
+    [SerializeField]
+    public AudioSource amaleeAudioSource;
+
+    [SerializeField]
+    public AudioClip dokiAudioClip;
+    [SerializeField]
+    public AudioClip amaleeAudioClip;
+
+
+
+    public void AddHitCombo()
     {
         hitCombo += 1;
     }
 
-    void ClearHitCombo()
+    public void ClearHitCombo()
     {
         hitCombo = 0;
+    }
+
+    public void MuteUnmuteDoki(bool value)
+    {
+        dokiMuted = value;
+        dokiAudioSource.mute = value;
+    }
+
+    public void MuteUnmuteAmalee(bool value)
+    {
+        amaleeMuted = value;
+        amaleeAudioSource.mute = value;
+    }
+
+    public void StopMusic()
+    {
+        dokiAudioSource.Stop();
+        amaleeAudioSource.Stop();
+        musicSource.Stop();
     }
 
     async Task StartMusic()
     {
         if (musicSource != null && musicClip != null && amaleeNoteManager != null && dokiNoteManager != null)
         {
-            amaleeNoteManager.Load(amaleeNoteManager.songName);
-            dokiNoteManager.Load(dokiNoteManager.songName);
+            var amaleeTask = amaleeNoteManager.Load(amaleeNoteManager.songName);
+            var dokiTask = dokiNoteManager.Load(dokiNoteManager.songName);
+
+            List<Task> taskList = new List<Task>(){ amaleeTask, dokiTask };
+            await Task.WhenAll(taskList);
 
             musicSource.PlayOneShot(musicClip);
+
+            amaleeAudioSource.PlayOneShot(amaleeAudioClip);
+            dokiAudioSource.PlayOneShot(dokiAudioClip);
         }
     }
 
