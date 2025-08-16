@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ActualGame/WhiteSpace.unity
     guid: 3177ecac69ae322489af88c951a90148
   - enabled: 1
+    path: Assets/Scenes/AmaleeFNF.unity
+    guid: 21a6216d1530c6149a74aa97f2f35b89
+  - enabled: 1
     path: Assets/Scenes/ActualGame/MintStage.unity
     guid: c9f59361e9de16142bfb977e2da32a4a
   - enabled: 1

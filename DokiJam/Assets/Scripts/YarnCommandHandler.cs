@@ -202,23 +202,12 @@ public class YarnCommandHandler : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("WhiteSpace");
     }
 
-    [YarnCommand("endGame")]
-    public void EndGame()
-    {
-        Debug.Log("Ending game");
-        if (variableStorage != null)
-        {
-            variableStorage.SetValue("$seenEnd", true);
-            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
-        }
-        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScreen");
-    }
-
     [YarnCommand("startRapping")]
     public void StartRapping()
     {
         // Go to the FNF scene
         Debug.Log("Starting rapping");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("AmaleeFNF");
     }
 
     [YarnCommand("whichGoddessSprite")]
@@ -259,6 +248,13 @@ public class YarnCommandHandler : MonoBehaviour
         }
     }
 
+    [YarnCommand("rollCredits")]
+    public void RollCredits()
+    {
+        Debug.Log("Rolling credits");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
+
     public void SeeBoss()
     {
         Debug.Log("Saw boss");
@@ -284,6 +280,20 @@ public class YarnCommandHandler : MonoBehaviour
         else
         {
             Debug.LogWarning("DialogueSystem not found in the scene");
+        }
+    }
+
+    public void ClearStorage()
+    {
+        Debug.Log("Clearing variable storage");
+        if (variableStorage != null)
+        {
+            variableStorage.Clear();
+            dialogueRunner.SaveStateToPersistentStorage("DokiJamState");
+        }
+        else
+        {
+            Debug.LogWarning("Variable storage not found");
         }
     }
 

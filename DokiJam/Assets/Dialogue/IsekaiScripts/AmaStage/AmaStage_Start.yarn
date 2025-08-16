@@ -81,6 +81,7 @@ Monarch: I-I have... never heard of that before. What type of adventurer are you
 
 Doki: A rapping one...
 
-<<startRapping YarnCommandHandler>>
 <<set $startAma to true>>
+<<updateAmaVar YarnCommandHandler>>
+<<startRapping YarnCommandHandler>>
 ===
