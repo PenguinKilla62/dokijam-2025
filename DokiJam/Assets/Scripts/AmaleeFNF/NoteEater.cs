@@ -111,6 +111,14 @@ public class NoteEater : MonoBehaviour
         }
     }
 
+    void ChangeDokiAnimation(characterAnimator.AnimationState animationState)
+    { 
+        var gameObject = GameObject.Find("doki");
+        var characterAnimator = gameObject.GetComponent<characterAnimator>();
+        characterAnimator.currentAnimation = animationState;
+        characterAnimator.IdleTimeout = 2;
+    }
+
     async Task Update()
     {
         if (inputActions.Player.Arrows.IsPressed())
@@ -121,18 +129,26 @@ public class NoteEater : MonoBehaviour
             if (readAxis == Vector2.left && noteType == NoteType.left)
             {
                 controlActive = true;
+
+                ChangeDokiAnimation(characterAnimator.AnimationState.Left);
             }
             else if (readAxis == Vector2.down && noteType == NoteType.down)
             {
                 controlActive = true;
+
+                ChangeDokiAnimation(characterAnimator.AnimationState.Down);
             }
             else if (readAxis == Vector2.up && noteType == NoteType.up)
             {
                 controlActive = true;
+
+                ChangeDokiAnimation(characterAnimator.AnimationState.Up);
             }
             else if (readAxis == Vector2.right && noteType == NoteType.right)
             {
                 controlActive = true;
+
+                ChangeDokiAnimation(characterAnimator.AnimationState.Right);
             }
         }
 

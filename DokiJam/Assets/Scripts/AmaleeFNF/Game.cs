@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -53,6 +54,8 @@ public class Game : MonoBehaviour
     [SerializeField]
     public AudioClip amaleeAudioClip;
 
+    private bool gamestopped = false;
+
 
     public void AddHealth(int value)
     {
@@ -99,10 +102,23 @@ public class Game : MonoBehaviour
         dokiAudioSource.Stop();
         amaleeAudioSource.Stop();
         musicSource.Stop();
+
+        amaleeNoteManager.PauseOrUnPauseNotes(true);
+        dokiNoteManager.PauseOrUnPauseNotes(true);
+    }
+
+    public void RestartGame()
+    { 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextScene()
+    { 
+        // use scenemanager for next scene
     }
 
     async Task LoadNotes()
-    { 
+    {
         var amaleeTask = amaleeNoteManager.Load(amaleeNoteManager.songName);
         var dokiTask = dokiNoteManager.Load(dokiNoteManager.songName);
 
@@ -128,15 +144,44 @@ public class Game : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     async Task Start()
     {
+        HideRestart();
         await LoadNotes();
         await StartMusic();
         healthText.text = currentHitPoints.ToString();
         
     }
 
+    void ShowRestart()
+    { 
+        GameObject gameObject = GameObject.Find("gameovercanvas");
+        gameObject.SetActive(true);
+    }
+
+    void HideRestart()
+    {
+        GameObject gameObject = GameObject.Find("gameovercanvas");
+        gameObject.SetActive(false);
+        
+        
+    }
+
+    void CheckHealth()
+    {
+        if (currentHitPoints <= 0)
+        {
+            gamestopped = true;
+            StopMusic();
+            ShowRestart();
+            
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (!gamestopped)
+        {
+            CheckHealth();
+        }
     }
 }
