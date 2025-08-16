@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Doki UP.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Doki UP0000" x="0" y="0" width="1290" height="2823" frameX="-9" frameY="-100" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0001" x="1290" y="0" width="1293" height="2824" frameX="-9" frameY="-100" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0002" x="2583" y="0" width="1294" height="2842" frameX="-9" frameY="-83" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0003" x="3877" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0004" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0005" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0006" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0007" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0008" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0009" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0010" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0011" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0012" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+	<SubTexture name="Doki UP0013" x="4927" y="0" width="1050" height="2925" frameX="0" frameY="0" frameWidth="1309" frameHeight="2925"/>
+</TextureAtlas>

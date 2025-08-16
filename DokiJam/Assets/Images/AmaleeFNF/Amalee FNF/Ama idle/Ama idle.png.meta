@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: d3d1d0a1c8b8c44059d8efb718910b52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1916385137034588180
+    second: Ama idle_0
+  - first:
+      213: 5837808229557942388
+    second: Ama idle_1
+  - first:
+      213: -7670825947022740185
+    second: Ama idle_2
+  - first:
+      213: -6996887290264278101
+    second: Ama idle_3
+  - first:
+      213: -8669740577111317811
+    second: Ama idle_4
+  - first:
+      213: 3951141480870713233
+    second: Ama idle_5
+  - first:
+      213: -8566347706736851811
+    second: Ama idle_6
+  - first:
+      213: 4158361620585902816
+    second: Ama idle_7
+  - first:
+      213: 7130038994844229606
+    second: Ama idle_8
+  - first:
+      213: 5289084344974006434
+    second: Ama idle_9
+  - first:
+      213: 2829285696027878962
+    second: Ama idle_10
+  - first:
+      213: 1577102408095263954
+    second: Ama idle_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ama idle_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 5456
+        width: 1221
+        height: 2735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 410f8c1f02e589a10800000000000000
+      internalID: 1916385137034588180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_1
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 5456
+        width: 1223
+        height: 2735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47837ad97af040150800000000000000
+      internalID: 5837808229557942388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_2
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 5456
+        width: 1224
+        height: 2734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7253cd56170cb8590800000000000000
+      internalID: -7670825947022740185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_3
+      rect:
+        serializedVersion: 2
+        x: 4129
+        y: 5456
+        width: 1235
+        height: 2734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab2a52a41016ee90800000000000000
+      internalID: -6996887290264278101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_4
+      rect:
+        serializedVersion: 2
+        x: 5421
+        y: 5456
+        width: 1248
+        height: 2733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc26d7e11e4eea780800000000000000
+      internalID: -8669740577111317811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_5
+      rect:
+        serializedVersion: 2
+        x: 6676
+        y: 5456
+        width: 1253
+        height: 2735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1971c982e3645d630800000000000000
+      internalID: 3951141480870713233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2721
+        width: 1257
+        height: 2734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94c77da5283e1980800000000000000
+      internalID: -8566347706736851811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_7
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 2721
+        width: 1264
+        height: 2734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2f3aaacd775b930800000000000000
+      internalID: 4158361620585902816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_8
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 2721
+        width: 1270
+        height: 2734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef9f5270bcf2f260800000000000000
+      internalID: 7130038994844229606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_9
+      rect:
+        serializedVersion: 2
+        x: 3837
+        y: 2721
+        width: 1270
+        height: 2718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a85141603a966940800000000000000
+      internalID: 5289084344974006434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_10
+      rect:
+        serializedVersion: 2
+        x: 5125
+        y: 2721
+        width: 1270
+        height: 2703
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236e5dfa954a34720800000000000000
+      internalID: 2829285696027878962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ama idle_11
+      rect:
+        serializedVersion: 2
+        x: 6413
+        y: 2721
+        width: 1270
+        height: 2713
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc6ee8c84ef2e510800000000000000
+      internalID: 1577102408095263954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ama idle_0: 1916385137034588180
+      Ama idle_1: 5837808229557942388
+      Ama idle_10: 2829285696027878962
+      Ama idle_11: 1577102408095263954
+      Ama idle_2: -7670825947022740185
+      Ama idle_3: -6996887290264278101
+      Ama idle_4: -8669740577111317811
+      Ama idle_5: 3951141480870713233
+      Ama idle_6: -8566347706736851811
+      Ama idle_7: 4158361620585902816
+      Ama idle_8: 7130038994844229606
+      Ama idle_9: 5289084344974006434
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

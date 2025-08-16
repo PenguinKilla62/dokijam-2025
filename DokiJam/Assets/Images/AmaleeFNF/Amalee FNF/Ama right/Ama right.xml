@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Ama right.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="AmaFNF0000" x="0" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0001" x="1278" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0002" x="2556" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0003" x="3834" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0004" x="5112" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0005" x="6390" y="0" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0006" x="0" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0007" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0008" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0009" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0010" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0011" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0012" x="1278" y="2741" width="1278" height="2741"/>
+	<SubTexture name="AmaFNF0013" x="1278" y="2741" width="1278" height="2741"/>
+</TextureAtlas>

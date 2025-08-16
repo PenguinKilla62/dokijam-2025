@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Ama Idle.png">
+	<!-- Created with Adobe Animate version 24.0.10.14 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="AmaFNF0000" x="0" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0001" x="1357" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0002" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0003" x="4071" y="0" width="1313" height="2735" frameX="-35" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0004" x="5384" y="0" width="1270" height="2735" frameX="-70" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0005" x="6654" y="0" width="1265" height="2735" frameX="-78" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0006" x="0" y="2735" width="1259" height="2735" frameX="-86" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0007" x="1259" y="2735" width="1274" height="2735" frameX="-83" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0008" x="2533" y="2735" width="1289" height="2735" frameX="-79" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0009" x="3822" y="2735" width="1288" height="2735" frameX="-80" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0010" x="5110" y="2735" width="1288" height="2735" frameX="-80" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0011" x="6398" y="2735" width="1288" height="2735" frameX="-80" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0013" x="2533" y="2735" width="1289" height="2735" frameX="-79" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0015" x="0" y="2735" width="1259" height="2735" frameX="-86" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0017" x="5384" y="0" width="1270" height="2735" frameX="-70" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0018" x="4071" y="0" width="1313" height="2735" frameX="-35" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0019" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0020" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0021" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0022" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+	<SubTexture name="AmaFNF0023" x="2714" y="0" width="1357" height="2735" frameX="0" frameY="0" frameWidth="1369" frameHeight="2735"/>
+</TextureAtlas>
