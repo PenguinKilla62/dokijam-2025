@@ -59,6 +59,9 @@ public class Game : MonoBehaviour
     [SerializeField]
     public Canvas restartCanvas;
 
+    [SerializeField]
+    public Canvas winCanvas;
+
 
     public void AddHealth(int value)
     {
@@ -148,6 +151,7 @@ public class Game : MonoBehaviour
     async Task Start()
     {
         HideRestart();
+        HideWin();
         await LoadNotes();
         await StartMusic();
         healthText.text = currentHitPoints.ToString();
@@ -168,6 +172,16 @@ public class Game : MonoBehaviour
         
     }
 
+    void ShowWin()
+    {
+        winCanvas.enabled = true;
+    }
+
+    void HideWin()
+    {
+        winCanvas.enabled = false;
+    }
+
     void CheckHealth()
     {
         if (currentHitPoints <= 0)
@@ -178,6 +192,14 @@ public class Game : MonoBehaviour
             
         }
     }
+    void CheckWin()
+    {
+        if (!musicSource.isPlaying && !gamestopped)
+        {
+            gamestopped = true;
+            ShowWin();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -185,6 +207,7 @@ public class Game : MonoBehaviour
         if (!gamestopped)
         {
             CheckHealth();
+            CheckWin();
         }
     }
 }
