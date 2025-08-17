@@ -56,6 +56,9 @@ public class Game : MonoBehaviour
 
     private bool gamestopped = false;
 
+    [SerializeField]
+    public Canvas restartCanvas;
+
 
     public void AddHealth(int value)
     {
@@ -113,8 +116,8 @@ public class Game : MonoBehaviour
     }
 
     public void NextScene()
-    { 
-        // use scenemanager for next scene
+    {
+        SceneManager.LoadScene("AmaStage");
     }
 
     async Task LoadNotes()
@@ -152,15 +155,15 @@ public class Game : MonoBehaviour
     }
 
     void ShowRestart()
-    { 
-        GameObject gameObject = GameObject.Find("gameovercanvas");
-        gameObject.SetActive(true);
+    {
+        // GameObject gameObject = GameObject.Find("gameovercanvas");
+        // gameObject.SetActive(true);
+        restartCanvas.enabled = true;
     }
 
     void HideRestart()
     {
-        GameObject gameObject = GameObject.Find("gameovercanvas");
-        gameObject.SetActive(false);
+        restartCanvas.enabled = false;
         
         
     }
