@@ -27,9 +27,6 @@ public class Game : MonoBehaviour
     public TMP_Text hitComboText;
 
     [SerializeField]
-    public TMP_Text healthText;
-
-    [SerializeField]
     public AudioSource musicSource;
 
     [SerializeField]
@@ -62,6 +59,9 @@ public class Game : MonoBehaviour
     [SerializeField]
     public Canvas winCanvas;
 
+    [SerializeField]
+    public Slider healthSlider;
+
 
     public void AddHealth(int value)
     {
@@ -71,7 +71,7 @@ public class Game : MonoBehaviour
 
     public void SetHealth()
     {
-        healthText.text = currentHitPoints.ToString();
+        healthSlider.value = currentHitPoints;
     }
 
     public void AddHitCombo()
@@ -150,11 +150,11 @@ public class Game : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     async Task Start()
     {
+        SetHealth();
         HideRestart();
         HideWin();
         await LoadNotes();
         await StartMusic();
-        healthText.text = currentHitPoints.ToString();
         
     }
 
