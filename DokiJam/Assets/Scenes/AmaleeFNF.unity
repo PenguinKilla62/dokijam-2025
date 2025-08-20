@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 114881647}
   - component: {fileID: 114881652}
   m_Layer: 5
-  m_Name: NoteEater (1)
+  m_Name: AutoNoteEater (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,10 +490,10 @@ RectTransform:
   m_GameObject: {fileID: 114881645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.9998099, y: 0.9998099, z: 0.9998099}
+  m_LocalScale: {x: 0.99980986, y: 0.99980986, z: 0.9998099}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1376021629}
+  m_Father: {fileID: 2056627564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -615,6 +615,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: 1
+  image: {fileID: 114881650}
+  activeHitColor: {r: 0.003921569, g: 0.3882353, b: 0.7176471, a: 1}
+  activeColorShowSecs: 0.1
 --- !u!1 &138201242
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +909,11 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 1
   input_health_timeout_secs: 1.5
+  image: {fileID: 222483349}
+  activeHitColor: {r: 0.003921569, g: 0.3882353, b: 0.7176471, a: 1}
+  activeColorShowSecs: 0.1
+  activeMissColor: {r: 1, g: 1, b: 1, a: 1}
+  controlActiveTime: 0.1
 --- !u!70 &222483348
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1375,26 +1383,14 @@ PrefabInstance:
     - {fileID: 3477657100755250840, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 2056627564}
+    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2124839882}
     - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1707056463}
-    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2056627564}
-    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1570196940}
-    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 114881646}
-    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1889837705}
-    - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1207425179}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
 --- !u!1 &510553633
@@ -2303,6 +2299,11 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 3
   input_health_timeout_secs: 1.5
+  image: {fileID: 597550293}
+  activeHitColor: {r: 0.6431373, g: 0, b: 0.16078432, a: 1}
+  activeColorShowSecs: 0.1
+  activeMissColor: {r: 1, g: 1, b: 1, a: 1}
+  controlActiveTime: 0.1
 --- !u!70 &597550292
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3263,6 +3264,11 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 2
   input_health_timeout_secs: 1.5
+  image: {fileID: 1022404748}
+  activeHitColor: {r: 0, g: 0.6431373, b: 0.101960786, a: 1}
+  activeColorShowSecs: 0.1
+  activeMissColor: {r: 1, g: 1, b: 1, a: 1}
+  controlActiveTime: 0.1
 --- !u!70 &1022404747
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3789,7 +3795,7 @@ GameObject:
   - component: {fileID: 1207425180}
   - component: {fileID: 1207425185}
   m_Layer: 5
-  m_Name: NoteEater (3)
+  m_Name: AutoNoteEater (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3804,10 +3810,10 @@ RectTransform:
   m_GameObject: {fileID: 1207425178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.9998099, y: 0.9998099, z: 0.9998099}
+  m_LocalScale: {x: 0.99980986, y: 0.99980986, z: 0.9998099}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1376021629}
+  m_Father: {fileID: 2056627564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3929,6 +3935,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: 4
+  image: {fileID: 1207425183}
+  activeHitColor: {r: 0.6431373, g: 0, b: 0.16078432, a: 1}
+  activeColorShowSecs: 0.1
 --- !u!223 &1218279088 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 8100832304891855485, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
@@ -4651,7 +4660,7 @@ GameObject:
   - component: {fileID: 1570196941}
   - component: {fileID: 1570196945}
   m_Layer: 5
-  m_Name: NoteEater
+  m_Name: AutoNoteEater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4666,10 +4675,10 @@ RectTransform:
   m_GameObject: {fileID: 1570196939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.9998099, y: 0.9998099, z: 0.9998099}
+  m_LocalScale: {x: 0.99980986, y: 0.99980986, z: 0.9998099}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1376021629}
+  m_Father: {fileID: 2056627564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4791,6 +4800,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: 3
+  image: {fileID: 1570196943}
+  activeHitColor: {r: 0.30980393, g: 0, b: 0.6431373, a: 1}
+  activeColorShowSecs: 0.1
 --- !u!1 &1642094449
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,7 +5493,7 @@ GameObject:
   - component: {fileID: 1889837706}
   - component: {fileID: 1889837711}
   m_Layer: 5
-  m_Name: NoteEater (2)
+  m_Name: AutoNoteEater (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5496,10 +5508,10 @@ RectTransform:
   m_GameObject: {fileID: 1889837704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.9998099, y: 0.9998099, z: 0.9998099}
+  m_LocalScale: {x: 0.99980986, y: 0.99980986, z: 0.9998099}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1376021629}
+  m_Father: {fileID: 2056627564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5621,6 +5633,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: 2
+  image: {fileID: 1889837709}
+  activeHitColor: {r: 0, g: 0.6431373, b: 0.101960786, a: 1}
+  activeColorShowSecs: 0.1
 --- !u!1 &1916187341
 GameObject:
   m_ObjectHideFlags: 0
@@ -6011,6 +6026,11 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: de752ddeae95d914ab44ca824476781a, type: 3}
   noteType: 0
   input_health_timeout_secs: 1.5
+  image: {fileID: 2022998355}
+  activeHitColor: {r: 0.30980393, g: 0, b: 0.6431373, a: 1}
+  activeColorShowSecs: 0.1
+  activeMissColor: {r: 1, g: 1, b: 1, a: 1}
+  controlActiveTime: 0.1
 --- !u!70 &2022998354
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6145,6 +6165,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1144247889}
+  - {fileID: 1570196940}
+  - {fileID: 114881646}
+  - {fileID: 1889837705}
+  - {fileID: 1207425179}
   m_Father: {fileID: 1376021629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6508,11 +6532,11 @@ PrefabInstance:
     - {fileID: 3477657100755250840, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1674828782}
+      insertIndex: 0
+      addedObject: {fileID: 55157667}
     - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 55157667}
+      addedObject: {fileID: 1674828782}
     - targetCorrespondingSourceObject: {fileID: 3975355081514545418, guid: b40550177cdcbc147a952eb69ba96634, type: 3}
       insertIndex: -1
       addedObject: {fileID: 573519005}

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class NoteEater : MonoBehaviour
@@ -38,12 +40,33 @@ public class NoteEater : MonoBehaviour
     private InputSystem_Actions inputActions;
 
     [SerializeField]
-    public float input_health_timeout_secs = 1.5f;
+    public float input_health_timeout_secs = 0.2f;
 
 
-    private float current_input_health_timeout_secs = 1.5f;
+    private float current_input_health_timeout_secs = 0.0f;
 
     private bool input_health_timeout = false;
+
+    [SerializeField]
+    public Image image;
+
+    [SerializeField]
+    public Color activeHitColor;
+
+    [SerializeField]
+    public float activeColorShowSecs = 0.10f;
+
+    private float currentColorShowSecs = 0.0f;
+
+    [SerializeField]
+    public Color activeMissColor;
+
+    private Color originalColor;
+
+    [SerializeField]
+    public float controlActiveTime = 0.10f;
+
+    private float currentControlActiveTime = 0.0f;
 
 
     void Awake()
@@ -66,7 +89,7 @@ public class NoteEater : MonoBehaviour
     {
         var gameObject = GameObject.Find("Game");
         game = gameObject.GetComponent<Game>();
-        Debug.Log(game);
+        originalColor = image.color;
     }
 
     void ControlPerformed(InputAction.CallbackContext context)
@@ -102,12 +125,20 @@ public class NoteEater : MonoBehaviour
             audioSource.PlayOneShot(audioClip);
             game.AddHealth(1);
             game.AddHitCombo();
+
+            image.color = activeHitColor;
+            currentColorShowSecs = activeColorShowSecs;
         }
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        game.AddHealth(-1);
+        if (input_health_timeout == false)
+        {
+            game.AddHealth(-1);
+            input_health_timeout = true;
+            current_input_health_timeout_secs = input_health_timeout_secs;
+        }
         triggerActive = false;
         var hashCode = collider.gameObject.GetHashCode().ToString();
 
@@ -127,6 +158,24 @@ public class NoteEater : MonoBehaviour
 
     async Task Update()
     {
+        if (currentColorShowSecs <= 0)
+        {
+            image.color = originalColor;
+        }
+        else
+        {
+            currentColorShowSecs -= Time.deltaTime;
+        }
+
+        if (currentControlActiveTime <= 0)
+        {
+            controlActive = false;
+        }
+        else
+        { 
+            currentControlActiveTime -= Time.deltaTime;
+        }
+
         if (inputActions.Player.Arrows.IsPressed())
         {
             Debug.Log(inputActions.Player.Arrows.ReadValue<Vector2>());
@@ -165,7 +214,7 @@ public class NoteEater : MonoBehaviour
             {
                 if (!input_health_timeout)
                 {
-                    game.AddHealth(-1);
+                    //game.AddHealth(-1);
                     miss = true;
                     controlActive = false;
                     input_health_timeout = true;
@@ -176,7 +225,9 @@ public class NoteEater : MonoBehaviour
 
         if (miss)
         {
-            await Task.Delay(100);
+            image.color = activeMissColor;
+            currentColorShowSecs = activeColorShowSecs;
+            await Task.Delay(50);
             miss = false;
         }
 
